@@ -1,4 +1,4 @@
-# Executes “.bashrc” file on login shells
+# Executes “.bashrc” file for login shells
 if [ -f $HOME/.bashrc ]
   then
     source $HOME/.bashrc

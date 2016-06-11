@@ -1,5 +1,5 @@
 # POSIX compliant function to check whether an executable exists
-executable () {
+exists () {
   url=`command -v $1 2>&1`
   exit_status=$?
 

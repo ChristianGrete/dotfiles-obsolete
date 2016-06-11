@@ -7,6 +7,7 @@ executable () {
     then
       return 0
   else
+    echo "$1: command not found" >&2
     return $exit_status
   fi
 }

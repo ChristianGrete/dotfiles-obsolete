@@ -5,7 +5,6 @@ export ZSH=$HOME/.oh-my-zsh
 
 CASE_SENSITIVE=true
 COMPLETION_WAITING_DOTS=true
-DISABLE_UNTRACKED_FILES_DIRTY=true
 ZSH_THEME=christiangrete
 
 plugins=(brew git textmate)

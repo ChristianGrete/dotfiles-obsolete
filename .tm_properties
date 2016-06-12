@@ -1,0 +1,10 @@
+include = "{$include,.bash*,.dotfiles*,.editorconfig,.git*,.profile,.tm_properties,.zsh*}"
+projectDirectory = "$CWD"
+softTabs = true
+tabSize = 2
+windowTitle = "$TM_DISPLAYNAME — dotfiles"
+wrapColumn = 80
+
+[ ".dotfilesignore" ]
+  fileType = "text.plain"
+  spellChecking = false

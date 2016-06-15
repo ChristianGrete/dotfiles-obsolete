@@ -33,11 +33,11 @@ available () {
         fi
       fi
 
-      echo "$3: not found" >&2
+      echo "$3: program not found" >&2
       return 127
   elif [ -d $1 ] || [ ! -x $1 ]
     then
-      echo "$3: not executable" >&2
+      echo "$3: file not executable" >&2
       return 126
   fi
 

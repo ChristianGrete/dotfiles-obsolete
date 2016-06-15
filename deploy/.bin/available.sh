@@ -2,6 +2,6 @@
 
 cd `dirname $0`
 
-. ../.lib/available.sh
+. $HOME/.lib/available.sh
 
 available $@

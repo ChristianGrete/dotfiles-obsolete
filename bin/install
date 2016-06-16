@@ -1,0 +1,26 @@
+#!/bin/sh
+
+cd `dirname $0`/..
+
+export HOME=$PWD/deploy
+export PATH=/usr/bin:/bin:/usr/sbin:/sbin
+
+. $HOME/.profile
+
+if ! available brew
+  then
+    /usr/bin/ruby -e `curl -fLsS https://raw.githubusercontent.com/Homebrew/install/master/install`
+
+    if [ $? -ne 0 ]
+      then
+        exit 1
+    fi
+fi
+
+brew update >/dev/null 2>&1
+
+brew upgrade >/dev/null 2>&1
+
+brew install dash
+
+brew cleanup >/dev/null 2>&1

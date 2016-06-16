@@ -13,19 +13,19 @@ alias ni='npm cache -s clean && npm i --loglevel http --no-progress'
 alias nr='npm run -q'
 
 # Use `npm run grunt` as if Grunt was installed globally
-if ! available grunt
+if ! available grunt >/dev/null 2>&1
   then
     alias grunt='nr grunt --'
 fi
 
 # Use `npm run gulp` as if gulp was installed globally
-if ! available gulp
+if ! available gulp >/dev/null 2>&1
   then
     alias gulp='nr gulp --'
 fi
 
 # Use `npm run typings` as if Typings was installed globally
-if ! available typings
+if ! available typings >/dev/null 2>&1
   then
     alias typings='nr typings --'
 fi

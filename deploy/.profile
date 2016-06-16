@@ -10,7 +10,7 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 alias brews='brew ls --versions'
 
 # Shortcut to cleanly update Homebrew formulae and packages
-alias rebrew='brew update >/dev/null 2>&1; brew upgrade && brew cleanup'
+alias rebrew='brew update; brew upgrade && brew cleanup'
 
 # Shortcut to cleanly invoke `npm install` without progress bar
 alias ni='npm cache -s clean && npm i --loglevel http --no-progress'

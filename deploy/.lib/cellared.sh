@@ -1,7 +1,6 @@
 #!/bin/sh
 
 # POSIX compliant function to test whether a program is cellared
-
 cellared () {
   if [ -z ${1:+_} ]
     then

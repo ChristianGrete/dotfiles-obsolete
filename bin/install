@@ -7,6 +7,15 @@ export PATH=/usr/bin:/bin:/usr/sbin:/sbin
 
 . $HOME/.profile
 
+if ! available git
+  then
+    exit 1
+fi
+
+git checkout master
+
+git pull origin master
+
 if ! available brew
   then
     /usr/bin/ruby -e `curl -fLsS https://raw.githubusercontent.com/Homebrew/install/master/install`

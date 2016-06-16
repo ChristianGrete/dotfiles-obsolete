@@ -1,0 +1,5 @@
+#!/bin/sh
+
+. $HOME/.lib/exists.sh
+
+exists $1

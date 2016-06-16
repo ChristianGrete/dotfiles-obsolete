@@ -2,4 +2,4 @@
 
 . $HOME/.lib/cellared.sh
 
-cellared $@
+cellared $1

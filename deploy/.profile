@@ -6,14 +6,20 @@ export PATH=$HOME/.bin:$HOME/.sbin:$PATH
 # Path to Homebrew’s executables
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
+# Support for source command
+if ! available source >/dev/null 2>&1
+  then
+    alias source='.'
+fi
+
 # Shortcut to list all Homebrew packages and their versions
 alias brews='brew ls --versions'
 
 # Shortcut to cleanly update Homebrew formulae and packages
-alias rebrew='brew update; brew upgrade && brew cleanup'
+alias rebrew='brew update; brew upgrade --cleanup'
 
 # Shortcut to cleanly invoke `npm install` without progress bar
-alias ni='npm cache -s clean && npm i --loglevel http --no-progress'
+alias ni='npm cache -s clean; npm i --loglevel http --no-progress'
 
 # Shortcut to quietly invoke `npm run`
 alias nr='npm run -q'

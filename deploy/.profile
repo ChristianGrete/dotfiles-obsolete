@@ -6,11 +6,23 @@ export PATH=$HOME/.bin:$HOME/.sbin:$PATH
 # Path to Homebrew’s executables
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
+# Shortcut to list all Homebrew packages and their versions
+alias brews='brew ls --versions'
+
+# Shortcut to cleanly update Homebrew formulae and packages
+alias rebrew='brew update >/dev/null 2>&1; brew upgrade && brew cleanup'
+
 # Shortcut to cleanly invoke `npm install` without progress bar
 alias ni='npm cache -s clean && npm i --loglevel http --no-progress'
 
 # Shortcut to quietly invoke `npm run`
 alias nr='npm run -q'
+
+# Use `npm run bower` as if Bower was installed globally
+if ! available bower >/dev/null 2>&1
+  then
+    alias bower='nr bower --'
+fi
 
 # Use `npm run grunt` as if Grunt was installed globally
 if ! available grunt >/dev/null 2>&1

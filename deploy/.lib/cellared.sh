@@ -8,18 +8,9 @@ cellared () {
       return 1
   fi
 
-  `. $HOME/.lib/available.sh && available $1`
-
-  set -- $? $1
-
-  if [ $1 -ne 0 ]
-    then
-      return $1
-  fi
-
   `. $HOME/.lib/available.sh && available brew`
 
-  set -- $? $2
+  set -- $? $1
 
   if [ $1 -ne 0 ]
     then
@@ -30,7 +21,7 @@ cellared () {
 
   if [ $# -lt 3 ] || [ $2 -ne 0 ]
     then
-      echo "$1: formula not found" >&2
+      echo "$1: brew not found" >&2
 
     if [ $2 -eq 0 ]
       then

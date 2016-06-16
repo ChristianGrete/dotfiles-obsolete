@@ -1,4 +1,4 @@
-include = "{$include,.bash*,.bin,.dotfiles*,.DS_Store,.editorconfig,.git*,.lib,.profile,.tm_properties,.zsh*}"
+include = "{$include,.bash*,.bin,.dotfiles*,.editorconfig,.git*,.lib,.profile,.tm_properties,.zsh*}"
 projectDirectory = "$CWD"
 softTabs = true
 tabSize = 2

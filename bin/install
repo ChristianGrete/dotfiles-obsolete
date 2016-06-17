@@ -2,6 +2,11 @@
 
 cd `dirname $0`/..
 
+if [ -z ${PWD:+_} ]
+  then
+    export PWD=`pwd`
+fi
+
 export HOME=$PWD/deploy
 export PATH=/usr/bin:/bin:/usr/sbin:/sbin
 

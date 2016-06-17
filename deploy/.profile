@@ -21,6 +21,12 @@ alias rebrew='brew update; brew upgrade --cleanup'
 # Shortcut to cleanly invoke `npm install` without progress bar
 alias ni='npm cache -s clean; npm i --loglevel http --no-progress'
 
+# Shortcut to cleanly install and save npm dev-dependencies
+alias nid='ni -D'
+
+# Shortcut to cleanly install and save npm dependencies
+alias nis='ni -S'
+
 # Shortcut to quietly invoke `npm run`
 alias nr='npm run -q'
 

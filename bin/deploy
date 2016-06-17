@@ -1,0 +1,67 @@
+#!/bin/sh
+
+cd `dirname $0`/..
+
+export DOTFILES=`pwd`
+
+if [ -z ${HOME:+_} ]
+  then
+    echo 'Please enter your username:'
+
+    read HOME && HOME=/Users/$HOME
+
+    if [ ! -d $HOME ]
+      then
+        echo "$HOME: directory not found" >&2
+        exit 1
+    fi
+
+    export HOME=$HOME
+fi
+
+export TARGET=$HOME
+export HOME=$DOTFILES/deploy
+export PATH=/usr/bin:/bin:/usr/sbin:/sbin
+
+. $HOME/.profile
+
+if ! available curl || ! available /usr/bin/ruby
+  then
+    exit 1
+fi
+
+if ! available brew
+  then
+    /usr/bin/ruby -e `curl -fLsS https://raw.githubusercontent.com/Homebrew/install/master/install`
+
+    if [ $? -ne 0 ]
+      then
+        exit 1
+    fi
+fi
+
+brew update >/dev/null 2>&1
+
+brew upgrade >/dev/null 2>&1
+
+brew install git node ruby zsh
+
+if [ $? -ne 0 ]
+  then
+    exit 1
+fi
+
+brew cleanup >/dev/null 2>&1
+
+git checkout master
+
+git pull origin master
+
+if [ $? -ne 0 ]
+  then
+    exit 1
+fi
+
+ni -g npm && npm update -g
+
+exit $?

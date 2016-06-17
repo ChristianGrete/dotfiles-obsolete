@@ -18,6 +18,9 @@ alias brews='brew ls --versions'
 # Shortcut to cleanly update Homebrew formulae and packages
 alias rebrew='brew update; brew upgrade --cleanup'
 
+# Shortcut to uninstall a specific Homebrew package
+alias unbrew='brew rm'
+
 # Shortcut to cleanly invoke `npm install` without progress bar
 alias ni='npm cache -s clean; npm i --loglevel http --no-progress'
 

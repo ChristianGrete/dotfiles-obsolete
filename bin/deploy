@@ -3,6 +3,8 @@
 cd `dirname $0`/..
 
 export DOTFILES=`pwd`
+export DOTFILES_TARGETS=$DOTFILES/deploy
+export DOTFILES_LIBRARY=$DOTFILES_TARGETS/.lib
 
 echo '               _      _'
 echo '   |          | | o  | |'
@@ -16,7 +18,7 @@ echo; echo 'Locating your home directory...'; echo
 
 if [ -z ${HOME:+_} ]
   then
-    echo 'Home directory not set, please enter your username:'
+    printf 'Home directory not set, please enter your username: '
 
     read HOME && HOME=/Users/$HOME; echo
 
@@ -36,7 +38,7 @@ echo 'Initializing...'; echo
 
 REAL_HOME=$HOME
 
-export HOME=$DOTFILES/deploy
+export HOME=$DOTFILES_TARGETS
 export PATH=/usr/bin:/bin:/usr/sbin:/sbin
 
 echo 'Loading profile...'; echo
@@ -49,7 +51,9 @@ unset REAL_HOME
 
 echo 'Validating dependencies...'; echo
 
-if ! available curl || ! available ruby
+. $DOTFILES_LIBRARY/available.sh
+
+if ! available curl || ! available find || ! available ruby
   then
     echo '-- Error! Could not validate dependencies.' >&2
     echo; exit 1
@@ -92,7 +96,7 @@ echo 'Validating Oh-My-Zsh...'; echo
 
 if [ -d $HOME/.oh-my-zsh ]
   then
-    echo 'Updating Oh-My-Zsh...'; echo
+    echo 'Updating Oh-My-Zsh repository...'; echo
 
     cd $HOME/.oh-my-zsh
 
@@ -117,7 +121,7 @@ else
   fi
 fi
 
-echo 'Updating dotfiles...'; echo
+echo 'Updating dotfiles repository...'; echo
 
 git checkout master && git pull origin master
 
@@ -129,6 +133,14 @@ fi
 
 echo; echo 'Updating npm...'; echo
 
-ni -g npm && npm update -g
+ni -g npm && npm up -g
+
+if [ $? -ne 0 ]
+  then
+    echo '-- Error! Unable to update npm.' >&2
+    echo; exit 1
+fi
+
+. $DOTFILES_LIBRARY/symlink.sh
 
 exit $?

@@ -1,5 +1,3 @@
-#!/bin/sh
-
 # Path to my executables
 export PATH=$HOME/.bin:$HOME/.sbin:$PATH
 

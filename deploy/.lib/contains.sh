@@ -14,7 +14,7 @@ contains () {
       return 1
   fi
 
-  if [ "${1#*$2}" = $1 ]
+  if [ "${1#*$2}" = "$1" ]
     then
       return 1
   fi

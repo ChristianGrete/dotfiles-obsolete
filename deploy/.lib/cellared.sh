@@ -17,7 +17,7 @@ cellared () {
       return $1
   fi
 
-  set $2 `a=$(brew ls --versions $2 2>&1); echo $? $a`
+  set -- $2 `a=$(brew ls --versions $2 2>&1); echo $? $a`
 
   if [ $# -lt 3 ] || [ $2 -ne 0 ]
     then

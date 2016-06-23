@@ -26,7 +26,7 @@ symlink () {
 
       set -- $1 $2 `read a; echo $a | cut -c 1`
 
-      if [ $3 != y ] && [ $3 != Y ]
+      if [ "$3" != y ] && [ "$3" != Y ]
         then
           echo 'not replaced'
           return 1

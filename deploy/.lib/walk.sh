@@ -18,5 +18,7 @@ walk () {
       fi
   done
 
+  echo
+
   return $?
 }

@@ -8,7 +8,7 @@ walk () {
       return 1
   fi
 
-  for a in `find $1 -name '*' -depth 1`
+  for a in `find "$1" -name '*' -depth 1`
     do
       if [ -d $a ]
         then

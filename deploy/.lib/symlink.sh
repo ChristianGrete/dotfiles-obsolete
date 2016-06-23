@@ -42,5 +42,12 @@ symlink () {
 
   ln -fs $1 $2
 
-  return $?
+  set -- $? $1 $2
+
+  if [ $1 -eq 0 ]
+    then
+      echo "$3 -> $2"
+  fi
+
+  return $1
 }

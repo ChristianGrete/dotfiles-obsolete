@@ -1,6 +1,5 @@
-#!/bin/sh
-
 # POSIX compliant function to test whether a command exists
+
 exists () {
   if [ -z ${1:+_} ]
     then

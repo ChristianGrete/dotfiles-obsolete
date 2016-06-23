@@ -1,6 +1,5 @@
-#!/bin/sh
-
 # POSIX compliant function to carefully create symbolic links
+
 symlink () {
   if [ -z ${1:+_} ]
     then

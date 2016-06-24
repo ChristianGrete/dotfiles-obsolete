@@ -20,5 +20,6 @@ read VERSION
 git add deploy
 git commit -m "release($VERSION): deploy [ci skip]"
 git push origin master
+
 git tag -a "$VERSION" -m "v$VERSION"
 git push origin --tags

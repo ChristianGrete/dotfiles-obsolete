@@ -13,3 +13,12 @@ fi
 export BINARIES="$PWD/bin"
 
 source "$BINARIES/build"
+
+printf 'Please enter a version number: '
+read VERSION
+
+git add deploy
+git commit -m "release($VERSION): deploy [ci skip]"
+git push origin master
+git tag -a "$VERSION"
+git push origin --tags

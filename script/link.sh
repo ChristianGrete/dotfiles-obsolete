@@ -1,6 +1,25 @@
+echo 'Creating symbolic links...'
+echo
+
 start=`expr ${#DOTFILES} + 2`
 
-for target in `walk $DOTFILES`
+if [ $? -ne 0 ]
+  then
+    echo '-- Error! Unable to determine start index.' >&2
+    echo
+    exit 1
+fi
+
+targets=`walk $DOTFILES`
+
+if [ $? -ne 0 ]
+  then
+    echo '-- Error! Index dotfiles targets.' >&2
+    echo
+    exit 1
+fi
+
+for target in $targets
   do
     base=`echo $target | cut -c $start-${#target} | grep -vf $PROJECT/.dotfilesignore`
 
@@ -29,8 +48,15 @@ for target in `walk $DOTFILES`
 
     symlink $target "$link"
 
+    if [ $? -ne 0 ]
+      then
+        unset link
+        continue
+    fi
+
     unset link
 done
 
-unset start
-unset target
+unset start target targets
+
+echo

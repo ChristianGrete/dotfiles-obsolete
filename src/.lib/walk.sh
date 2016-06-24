@@ -13,11 +13,9 @@ walk () {
         then
           walk $a
       else
-        printf "$a "
+        echo "$a"
       fi
   done
-
-  echo
 
   return $?
 }

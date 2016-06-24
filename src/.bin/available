@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. $HOME/.lib/available.sh
+. "$HOME/.lib/available.sh"
 
 available $1
 

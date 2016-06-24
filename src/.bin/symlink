@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. $HOME/.lib/symlink.sh
+. "$HOME/.lib/symlink.sh"
 
 symlink $1 $2
 

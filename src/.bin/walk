@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. $HOME/.lib/walk.sh
+. "$HOME/.lib/walk.sh"
 
 walk $1
 

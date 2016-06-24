@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. $HOME/.lib/contains.sh
+. "$HOME/.lib/contains.sh"
 
 contains $1 $2
 

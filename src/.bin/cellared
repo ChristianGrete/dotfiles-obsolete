@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. $HOME/.lib/cellared.sh
+. "$HOME/.lib/cellared.sh"
 
 cellared $1
 

@@ -4,7 +4,7 @@ for target in `walk $DOTFILES`
   do
     base=`echo $target | cut -c $start-${#target} | grep -vf $PROJECT/.dotfilesignore`
 
-    if [ -z "${base// }" ]
+    if [ -z "`echo "$base" | sed 's/[[:blank:]]//g'`" ]
       then
         unset base
         continue

@@ -1,0 +1,15 @@
+#!/bin/sh
+
+cd `dirname $0`/..
+
+if [ -z ${HOME:+_} ]
+  then
+    echo "$HOME: home directory not found"
+    exit 1
+fi
+
+. "`pwd`/bin/install"
+
+export BINARIES="$PWD/bin"
+
+source "$BINARIES/build"

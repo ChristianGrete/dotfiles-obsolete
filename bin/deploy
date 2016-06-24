@@ -2,11 +2,11 @@
 
 cd `dirname $0`/..
 
-. `pwd`/script/setup.sh
+. "`pwd`/script/setup.sh"
 
 for script in splash boot init verify update link
   do
-    . $SCRIPTS/$script.sh
+    . "$SCRIPTS/$script.sh"
 done
 
 unset script

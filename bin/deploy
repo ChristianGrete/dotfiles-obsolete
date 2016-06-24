@@ -4,12 +4,9 @@ cd `dirname $0`/..
 
 . "`pwd`/script/setup.sh"
 
-for script in splash boot init verify update link
+for script in splash boot init verify update link finish
   do
     . "$SCRIPTS/$script.sh"
 done
 
 unset script
-
-echo 'Dotfiles successfully deployed!'
-echo

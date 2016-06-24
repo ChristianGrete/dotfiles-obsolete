@@ -7,10 +7,19 @@ if [ -z ${PWD:+_} ]
     export PWD=`pwd`
 fi
 
-export HOME="$PWD/deploy"
+REAL_HOME=$HOME
+
+export HOME="$PWD/src"
+export LIBRARY="$HOME/.lib"
 export PATH=/usr/bin:/bin:/usr/sbin:/sbin
 
 . "$HOME/.profile"
+
+export HOME=$REAL_HOME
+
+unset REAL_HOME
+
+source "$LIBRARY/available.sh"
 
 if ! available git
   then
@@ -38,5 +47,3 @@ brew upgrade >/dev/null 2>&1
 brew install dash
 
 brew cleanup >/dev/null 2>&1
-
-exit $?

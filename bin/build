@@ -2,7 +2,10 @@
 
 cd `dirname $0`/..
 
-PWD=`pwd`
+if [ -z ${PWD:+_} ]
+  then
+    export PWD=`pwd`
+fi
 
 . "$PWD/bin/clean"
 

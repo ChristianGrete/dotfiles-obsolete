@@ -17,6 +17,15 @@ source "$BINARIES/build"
 printf 'Please enter a version number: '
 read VERSION
 
+for tag in `git tag -l`
+  do
+    if [ "$tag" = "$VERSION" ]
+      then
+        echo "$VERSION: tag already exists"
+        exit 1
+    fi
+done
+
 git add deploy
 git commit -m "release($VERSION): deploy [ci skip]"
 git push origin master

@@ -1,7 +1,7 @@
 echo 'Verifying dependencies...'
 echo
 
-for dependency in curl expr find ruby
+for dependency in curl ruby
   do
     if ! available $dependency
       then

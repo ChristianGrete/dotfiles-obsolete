@@ -1,5 +1,4 @@
 # POSIX compliant function to recursively walk directories
-
 walk () {
   if [ -z ${1:+_} ]
     then

@@ -1,0 +1,9 @@
+#!/bin/sh
+
+cd `dirname $0`/..
+
+PWD=`pwd`
+
+. "$PWD/bin/clean"
+
+cp -R "$PWD/src" "$PWD/deploy"

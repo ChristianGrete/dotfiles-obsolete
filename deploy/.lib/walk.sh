@@ -1,5 +1,4 @@
 # POSIX compliant function to recursively walk directories
-
 walk () {
   if [ -z ${1:+_} ]
     then
@@ -13,11 +12,9 @@ walk () {
         then
           walk $a
       else
-        printf "$a "
+        echo "$a"
       fi
   done
-
-  echo
 
   return $?
 }

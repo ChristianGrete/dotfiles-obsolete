@@ -1,5 +1,4 @@
 # POSIX compliant function to test whether a string contains a sequence
-
 contains () {
   if [ -z ${1:+_} ]
     then

@@ -1,5 +1,4 @@
 # POSIX compliant function to test whether a program is available
-
 available () {
   if [ -z ${1:+_} ]
     then

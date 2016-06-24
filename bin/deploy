@@ -10,3 +10,6 @@ for script in splash boot init verify update link
 done
 
 unset script
+
+echo 'Dotfiles successfully deployed!'
+echo

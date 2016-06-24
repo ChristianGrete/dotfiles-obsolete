@@ -7,10 +7,10 @@ if [ -z ${PWD:+_} ]
     export PWD=`pwd`
 fi
 
-export HOME=$PWD/deploy
+export HOME="$PWD/deploy"
 export PATH=/usr/bin:/bin:/usr/sbin:/sbin
 
-. $HOME/.profile
+. "$HOME/.profile"
 
 if ! available git
   then

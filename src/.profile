@@ -1,8 +1,8 @@
 # Path to my executables
-export PATH=$HOME/.bin:$HOME/.sbin:$PATH
+export PATH="$HOME/.bin:$HOME/.sbin:$PATH"
 
 # Path to Homebrew’s executables
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 
 # Support for source command
 if ! available source >/dev/null 2>&1
@@ -53,4 +53,18 @@ fi
 if ! available typings >/dev/null 2>&1
   then
     alias typings='nr typings --'
+fi
+
+# Import of machine specific settings
+if [ -d "$HOME/.profiles" ]
+  then
+    for profile in `walk "$HOME/.profiles"`
+      do
+        if [ -r "$profile" ]
+          then
+            source "$profile"
+        fi
+    done
+
+    unset profile
 fi

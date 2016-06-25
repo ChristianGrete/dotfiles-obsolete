@@ -2,6 +2,6 @@
 
 . "$HOME/.lib/symlink.sh"
 
-symlink $1 $2
+symlink "$1" "$2"
 
 exit $?

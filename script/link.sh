@@ -23,7 +23,7 @@ for target in $targets
   do
     base=`echo $target | cut -c $start-${#target} | grep -vf $PROJECT/.dotfilesignore`
 
-    if [ -z "`echo "$base" | sed 's/[[:blank:]]//g'`" ]
+    if [ -z "`echo "$base" | sed 's/[[:space:]]//g'`" ]
       then
         unset base
         continue

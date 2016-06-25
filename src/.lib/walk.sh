@@ -8,12 +8,14 @@ walk () {
 
   for a in `find "$1" -name '*' -depth 1`
     do
-      if [ -d $a ]
+      if [ -d "$a" ]
         then
-          walk $a
+          walk "$a"
       else
-        echo "$a"
+        printf "$a"
       fi
+
+      echo
   done
 
   return $?

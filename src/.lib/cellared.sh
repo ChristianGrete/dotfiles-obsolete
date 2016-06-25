@@ -6,7 +6,7 @@ cellared () {
       return 1
   fi
 
-  `. $HOME/.lib/available.sh && available brew`
+  available brew
 
   set -- $? $1
 

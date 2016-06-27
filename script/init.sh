@@ -18,7 +18,7 @@ unset REAL_HOME
 echo 'Loading utilities...'
 echo
 
-for utility in available symlink walk
+for utility in available list symlink walk
   do
     source $DOTFILES_LIBRARY/$utility.sh
 done

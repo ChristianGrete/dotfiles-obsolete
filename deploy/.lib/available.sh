@@ -1,12 +1,12 @@
 # POSIX compliant function to test whether a program is available
 available () {
-  if [ -z ${1:+.} ]
+  if [ -z ${1:+program} ]
     then
       echo 'program: parameter not set or null' >&2
       return 1
   fi
 
-  set -- $(output=$(command -v $1 2>&1); echo $output $?) $1
+  set -- $(location=$(command -v $1 2>&1); echo $location $?) $1
 
   if [ $# -gt 3 ]
     then
@@ -22,7 +22,7 @@ available () {
     then
       if [ $2 -eq 0 ]
         then
-          $(available $(name='$'$(echo $3); eval $1; eval "echo $name") >/dev/null 2>&1)
+          $(available $(key='$'$(echo $3); eval $1; eval "echo $key") >/dev/null 2>&1)
 
         if [ $? -eq 0 ]
           then

@@ -1,12 +1,12 @@
 # POSIX compliant function to carefully create symbolic links
 symlink () {
-  if [ -z ${1:+.} ]
+  if [ -z ${1:+target} ]
     then
       echo 'target: parameter not set or null' >&2
       return 1
   fi
 
-  if [ -z ${2:+.} ]
+  if [ -z ${2:+link} ]
     then
       echo 'link: parameter not set or null' >&2
       return 1

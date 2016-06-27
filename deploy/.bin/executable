@@ -2,6 +2,6 @@
 
 . "$HOME/.lib/executable.sh"
 
-executable $1
+executable "$1"
 
 exit $?

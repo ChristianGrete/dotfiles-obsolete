@@ -1,12 +1,12 @@
 # POSIX compliant function to test whether a command exists
 exists () {
-  if [ -z ${1:+_} ]
+  if [ -z ${1:+.} ]
     then
       echo 'command: parameter not set or null' >&2
       return 1
   fi
 
-  $1 --version >/dev/null 2>&1
+  "$1" --version >/dev/null 2>&1
 
   if [ $? -eq 127 ]
     then

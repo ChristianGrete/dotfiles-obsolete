@@ -1,12 +1,12 @@
 # POSIX compliant function to test whether a string contains a sequence
 contains () {
-  if [ -z ${1:+_} ]
+  if [ -z ${1:+.} ]
     then
       echo 'string: parameter not set or null' >&2
       return 1
   fi
 
-  if [ -z ${2:+_} ]
+  if [ -z ${2:+.} ]
     then
       echo 'sequence: parameter not set or null' >&2
       return 1

@@ -1,6 +1,6 @@
 # POSIX compliant function to test whether a command is executable
 executable () {
-  `. $HOME/.lib/exists.sh && exists $1`
+  exists $1
 
   set -- $? $1
 

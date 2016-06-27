@@ -1,22 +1,34 @@
 # POSIX compliant function to recursively walk directories
-walk () {
-  if [ -z ${1:+_} ]
-    then
-      echo 'path: parameter not set or null' >&2
-      return 1
+walk () (
+  if [ ! -d "${1:=$(pwd)}" ] || [ ! -r "$1" ]
+      then
+        echo "$1: directory not found or not readable" >&2
+        return 1
   fi
 
-  for a in `find "$1" -name '*' -depth 1`
+  IFS='
+'
+
+  for field in $(list "$1")
     do
-      if [ -d "$a" ]
+      if [ $(expr "$field" : '^\/') -ne 0 ]
         then
-          walk "$a"
-      else
-        printf "$a"
+          entry="$field"
+        else
+          entry="$entry
+$field"
       fi
 
-      echo
+      if [ -e "$entry" ]
+        then
+          if [ -d "$entry" ] && [ -r "$entry" ]
+            then
+              walk "$entry"
+            else
+              echo "$entry"
+          fi
+      fi
   done
 
   return $?
-}
+)

@@ -2,6 +2,6 @@
 
 . "$HOME/.lib/walk.sh"
 
-walk "$1"
+walk "${1:-$(pwd)}"
 
 exit $?

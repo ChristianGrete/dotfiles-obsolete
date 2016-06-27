@@ -11,28 +11,14 @@ list () {
       set -- "$(pwd)/$1"
   fi
 
-  loops=0
-
+  IFS='
+'
   for entry in $(cd "$1" && find . -name '*' -depth 1)
     do
-      loops=$(expr $loops + 1)
-
-      if [ $(expr $entry : '^\.\/') -eq 0 ]
-        then
-          printf " $entry"
-        else
-          if [ $loops -ne 1 ]
-            then
-              echo
-          fi
-
-          printf "$1/$(echo $entry | sed "s/^\.\///g")"
-      fi
+      echo "$1/$(printf "$entry" | sed "s/^\.\///g")"
   done
 
-  unset entry loops
-
-  echo
+  unset entry
 
   return 0
 }

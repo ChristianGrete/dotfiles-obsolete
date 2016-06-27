@@ -11,8 +11,14 @@ list () {
       set -- "$(pwd)/$1"
   fi
 
+  if [ $(echo "$1" | cut -c ${#1}) = '/' ]
+    then
+      set -- "${1%?}"
+  fi
+
   IFS='
 '
+
   for entry in $(cd "$1" && find . -name '*' -depth 1)
     do
       echo "$1/$(printf "$entry" | sed "s/^\.\///g")"

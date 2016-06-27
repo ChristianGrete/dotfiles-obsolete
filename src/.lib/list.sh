@@ -19,13 +19,13 @@ list () (
   IFS='
 '
 
-  for entry in $(cd "$1" && find . -name '*' -depth 1)
+  for field in $(cd "$1" && find . -name '*' -depth 1)
     do
-      if [ $(expr "$entry" : '^\.\/') -eq 0 ]
+      if [ $(expr "$field" : '^\.\/') -eq 0 ]
         then
-          echo "$entry"
+          echo "$field"
         else
-          echo "$1/$(printf "$entry" | sed "s/^\.\///")"
+          echo "$1/$(printf "$field" | sed "s/^\.\///")"
       fi
   done
 

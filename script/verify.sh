@@ -18,7 +18,7 @@ if ! available brew
     echo 'Installing Homebrew...'
     echo
 
-    ruby -e `curl -fLSs https://raw.githubusercontent.com/Homebrew/install/master/install`
+    ruby -e $(curl -fLSs https://raw.githubusercontent.com/Homebrew/install/master/install)
 
     if [ $? -ne 0 ]
       then

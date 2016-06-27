@@ -1,7 +1,7 @@
 echo 'Creating symbolic links...'
 echo
 
-start=`expr ${#DOTFILES} + 2`
+start=$(expr ${#DOTFILES} + 2)
 
 if [ $? -ne 0 ]
   then
@@ -10,7 +10,7 @@ if [ $? -ne 0 ]
     exit 1
 fi
 
-targets=`walk $DOTFILES`
+targets=$(walk "$DOTFILES")
 
 if [ $? -ne 0 ]
   then
@@ -21,22 +21,22 @@ fi
 
 for target in $targets
   do
-    base=`echo $target | cut -c $start-${#target} | grep -vf $PROJECT/.dotfilesignore`
+    base=$(echo $target | cut -c $start-${#target} | grep -vf "$PROJECT/.dotfilesignore")
 
-    if [ -z "`echo "$base" | sed 's/[[:space:]]//g'`" ]
+    if [ -z "$(echo "$base" | sed 's/[[:space:]]//g')" ]
       then
         unset base
         continue
     fi
 
-    dir=`dirname "$base"`
-    link=$HOME/$base
+    dir=$(dirname "$base")
+    link="$HOME/$base"
 
     unset base
 
     if [ "$dir" != . ]
       then
-        dir=$HOME/$dir
+        dir="$HOME/$dir"
 
         if [ ! -e "$dir" ]
           then

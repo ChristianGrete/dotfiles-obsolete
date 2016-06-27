@@ -26,13 +26,13 @@ brew cleanup >/dev/null 2>&1
 
 printf 'Locating Oh-My-Zsh installation... '
 
-if [ -d $HOME/.oh-my-zsh ]
+if [ -d "$HOME/.oh-my-zsh" ]
   then
     echo; echo
     echo 'Updating Oh-My-Zsh repository...'
     echo
 
-    cd $HOME/.oh-my-zsh
+    cd "$HOME/.oh-my-zsh"
 
     git checkout master && git pull origin master
 
@@ -45,14 +45,14 @@ if [ -d $HOME/.oh-my-zsh ]
 
     echo
 
-    cd $PROJECT
+    cd "$PROJECT"
 else
   printf 'Not found!'
   echo; echo
   echo 'Installing Oh-My-Zsh...'
   echo
 
-  git clone git://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh
+  git clone git://github.com/robbyrussell/oh-my-zsh.git "$HOME/.oh-my-zsh"
 
   if [ $? -ne 0 ]
     then

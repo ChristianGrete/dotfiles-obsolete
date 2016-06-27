@@ -1,17 +1,17 @@
 echo 'Initializing...'
 echo
 
-REAL_HOME=$HOME
+REAL_HOME="$HOME"
 
-export HOME=$DOTFILES
+export HOME="$DOTFILES"
 export PATH=/usr/bin:/bin:/usr/sbin:/sbin
 
 echo 'Loading profile...'
 echo
 
-. $HOME/.profile
+. "$HOME/.profile"
 
-export HOME=$REAL_HOME
+export HOME="$REAL_HOME"
 
 unset REAL_HOME
 
@@ -20,7 +20,7 @@ echo
 
 for utility in available list symlink walk
   do
-    source $DOTFILES_LIBRARY/$utility.sh
+    source "$DOTFILES_LIBRARY/$utility.sh"
 done
 
 unset utility

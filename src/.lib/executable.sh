@@ -8,9 +8,11 @@ executable () {
 
   "$1" --version >/dev/null 2>&1
 
-  if [ $? -eq 126 ] || [ $? -eq 127 ]
+  set -- $? "$1"
+
+  if [ $1 -eq 126 ] || [ $1 -eq 127 ]
     then
-      echo "$1: not executable" >&2
+      echo "$2: not executable" >&2
       return 126
   fi
 

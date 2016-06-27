@@ -1,12 +1,7 @@
 #!/bin/sh
 
-cd `dirname $0`/..
+cd "$(dirname "$0")/.."
 
-if [ -z ${PWD:+_} ]
-  then
-    export PWD=`pwd`
-fi
-
-. "$PWD/bin/clean"
+. "${PWD:=$(pwd)}/bin/clean"
 
 cp -R "$PWD/src" "$PWD/deploy"

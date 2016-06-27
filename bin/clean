@@ -1,12 +1,7 @@
 #!/bin/sh
 
-cd `dirname $0`/..
+cd "$(dirname "$0")/.."
 
-if [ -z ${PWD:+_} ]
-  then
-    export PWD=`pwd`
-fi
-
-find "$PWD" -name '.DS_Store' -type f -exec rm {} +
+find "${PWD:=$(pwd)}" -name '.DS_Store' -type f -exec rm {} +
 
 rm -rf "$PWD/deploy"

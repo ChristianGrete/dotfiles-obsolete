@@ -1,8 +1,8 @@
 #!/bin/sh
 
-cd `dirname $0`/..
+cd "$(dirname "$0")/.."
 
-. "`pwd`/script/setup.sh"
+. "$(pwd)/script/setup.sh"
 
 for script in splash boot init verify update link finish
   do

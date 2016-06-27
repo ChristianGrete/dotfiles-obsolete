@@ -1,13 +1,13 @@
 #!/bin/sh
 
-cd `dirname $0`/..
+cd "$(dirname "$0")/.."
 
 if [ -z ${PWD:+_} ]
   then
-    export PWD=`pwd`
+    export PWD="$(pwd)"
 fi
 
-REAL_HOME=$HOME
+REAL_HOME="$HOME"
 
 export HOME="$PWD/src"
 export LIBRARY="$HOME/.lib"
@@ -15,7 +15,7 @@ export PATH=/usr/bin:/bin:/usr/sbin:/sbin
 
 . "$HOME/.profile"
 
-export HOME=$REAL_HOME
+export HOME="$REAL_HOME"
 
 unset REAL_HOME
 
@@ -32,7 +32,7 @@ git pull origin master
 
 if ! available brew
   then
-    ruby -e `curl -fLSs https://raw.githubusercontent.com/Homebrew/install/master/install`
+    ruby -e $(curl -fLSs https://raw.githubusercontent.com/Homebrew/install/master/install)
 
     if [ $? -ne 0 ]
       then

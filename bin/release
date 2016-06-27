@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cd `dirname $0`/..
+cd "$(dirname "$0")/.."
 
 if [ -z ${HOME:+_} ]
   then
@@ -8,7 +8,7 @@ if [ -z ${HOME:+_} ]
     exit 1
 fi
 
-. "`pwd`/bin/install"
+. "${PWD:=$(pwd)}/bin/install"
 
 export BINARIES="$PWD/bin"
 
@@ -17,7 +17,7 @@ source "$BINARIES/build"
 printf 'Please enter a version number: '
 read VERSION
 
-for tag in `git tag -l`
+for tag in $(git tag -l)
   do
     if [ "$tag" = "$VERSION" ]
       then
@@ -27,7 +27,7 @@ for tag in `git tag -l`
 done
 
 git add deploy
-git commit -m "release($VERSION): deploy [ci skip]"
+git commit -m "release(v$VERSION): deploy [ci skip]"
 git push origin master
 
 git tag -a "$VERSION" -m "v$VERSION"

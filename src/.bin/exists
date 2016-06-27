@@ -2,6 +2,6 @@
 
 . "$HOME/.lib/exists.sh"
 
-exists $1
+exists "$1"
 
 exit $?

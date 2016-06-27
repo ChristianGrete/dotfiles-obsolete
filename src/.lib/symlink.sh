@@ -1,12 +1,12 @@
 # POSIX compliant function to carefully create symbolic links
 symlink () {
-  if [ -z ${1:+_} ]
+  if [ -z ${1:+.} ]
     then
       echo 'target: parameter not set or null' >&2
       return 1
   fi
 
-  if [ -z ${2:+_} ]
+  if [ -z ${2:+.} ]
     then
       echo 'link: parameter not set or null' >&2
       return 1
@@ -22,7 +22,7 @@ symlink () {
     then
       printf "$2: file already exists, replace? (y/n [n]) " >&2
 
-      set -- "$1" "$2" "`read a; echo $a | cut -c 1`"
+      set -- "$1" "$2" "$(read answer; echo $anwser | cut -c 1)"
 
       if [ "$3" != y ] && [ "$3" != Y ]
         then

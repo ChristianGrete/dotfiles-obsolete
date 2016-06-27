@@ -2,6 +2,6 @@
 
 . "$HOME/.lib/cellared.sh"
 
-cellared $1
+cellared "$1"
 
 exit $?

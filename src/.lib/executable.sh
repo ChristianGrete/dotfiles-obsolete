@@ -1,19 +1,16 @@
 # POSIX compliant function to test whether a command is executable
 executable () {
-  exists $1
-
-  set -- $? $1
-
-  if [ $1 -ne 0 ]
+  if [ -z ${1:+.} ]
     then
-      return $1
+      echo 'command: parameter not set or null' >&2
+      return 1
   fi
 
-  $2 --version >/dev/null 2>&1
+  "$1" --version >/dev/null 2>&1
 
-  if [ $? -eq 126 ]
+  if [ $? -eq 126 ] || [ $? -eq 127 ]
     then
-      echo "$2: not executable" >&2
+      echo "$1: not executable" >&2
       return 126
   fi
 

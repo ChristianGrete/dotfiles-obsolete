@@ -1,6 +1,6 @@
 # POSIX compliant function to test whether a program is cellared
 cellared () {
-  if [ -z ${1:+_} ]
+  if [ -z ${1:+.} ]
     then
       echo 'formula: parameter not set or null' >&2
       return 1
@@ -8,14 +8,14 @@ cellared () {
 
   available brew
 
-  set -- $? $1
+  set -- $? "$1"
 
   if [ $1 -ne 0 ]
     then
       return $1
   fi
 
-  set -- $2 `a=$(brew ls --versions $2 2>&1); echo $? $a`
+  set -- "$2" $(brews=$(brew ls --versions "$2" 2>&1); echo $? "$brews")
 
   if [ $# -lt 3 ] || [ $2 -ne 0 ]
     then

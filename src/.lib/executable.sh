@@ -1,6 +1,6 @@
 # POSIX compliant function to test whether a command is executable
 executable () {
-  if [ -z ${1:+.} ]
+  if [ -z ${1:+command} ]
     then
       echo 'command: parameter not set or null' >&2
       return 1

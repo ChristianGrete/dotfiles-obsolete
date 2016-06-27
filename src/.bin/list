@@ -2,6 +2,6 @@
 
 . "$HOME/.lib/list.sh"
 
-list "$1"
+list "${1:-$(pwd)}"
 
 exit $?

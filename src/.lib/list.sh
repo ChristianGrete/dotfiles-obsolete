@@ -1,5 +1,5 @@
 # POSIX compliant function to list the contents of a directory
-list () {
+list () (
   if [ ! -d "${1:=$(pwd)}" ] || [ ! -r "$1" ]
       then
         echo "$1: directory not found or not readable" >&2
@@ -21,10 +21,13 @@ list () {
 
   for entry in $(cd "$1" && find . -name '*' -depth 1)
     do
-      echo "$1/$(printf "$entry" | sed "s/^\.\///g")"
+      if [ $(expr "$entry" : '^\.\/') -eq 0 ]
+        then
+          echo "$entry"
+        else
+          echo "$1/$(printf "$entry" | sed "s/^\.\///g")"
+      fi
   done
 
-  unset entry
-
   return 0
-}
+)

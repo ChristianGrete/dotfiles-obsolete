@@ -1,6 +1,6 @@
 source "$HOME/.profile"
 
-# Path to Oh-My-Zsh’s repository
+# Path to Oh-My-Zsh's repository
 export ZSH="$HOME/.oh-my-zsh"
 
 CASE_SENSITIVE=true

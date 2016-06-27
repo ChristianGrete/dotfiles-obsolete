@@ -25,7 +25,7 @@ list () (
         then
           echo "$entry"
         else
-          echo "$1/$(printf "$entry" | sed "s/^\.\///g")"
+          echo "$1/$(printf "$entry" | sed "s/^\.\///")"
       fi
   done
 

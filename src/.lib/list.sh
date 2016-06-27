@@ -11,7 +11,7 @@ list () (
       set -- "$(pwd)/$1"
   fi
 
-  if [ $(echo "$1" | cut -c ${#1}) = '/' ]
+  if [ $(echo "$1" | cut -c ${#1}) = / ]
     then
       set -- "${1%?}"
   fi
@@ -25,7 +25,7 @@ list () (
         then
           echo "$field"
         else
-          echo "$1/$(printf "$field" | sed "s/^\.\///")"
+          echo "$1/$(printf "$field" | sed 's/^\.\///')"
       fi
   done
 

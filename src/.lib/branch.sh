@@ -1,15 +1,23 @@
 # POSIX compliant function to get the current Git branch name
 branch () {
-  set -- "$(command git symbolic-ref --quiet HEAD 2>/dev/null)" $?
+  set -- $(
+    ref=$(command git symbolic-ref --quiet HEAD 2>/dev/null)
 
-  if [ $2 -ne 0 ]
+    echo $? $ref
+  )
+
+  if [ $1 -ne 0 ]
     then
-      [ $2 -eq 128 ] && return
+      [ $1 -eq 128 ] && return $1
 
-      set -- "$(command git rev-parse --short HEAD 2>/dev/null)" $?
+      set -- $(
+        ref=$(command git rev-parse --short HEAD 2>/dev/null)
 
-      [ $2 -ne 0 ] && return $2
+        echo $? $ref
+      )
+
+      [ $1 -ne 0 ] && return $1
   fi
 
-  echo "${1#refs/heads/}"
+  echo ${2#refs/heads/}
 }

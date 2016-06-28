@@ -15,12 +15,12 @@ export HOME="$REAL_HOME"
 
 unset REAL_HOME
 
-echo 'Loading utilities...'
+echo 'Loading functions...'
 echo
 
-for utility in available list symlink walk
+for function in available list symlink walk
   do
-    source "$DOTFILES_LIBRARY/$utility.sh"
+    source "$DOTFILES_LIBRARY/$function.sh"
 done
 
-unset utility
+unset function

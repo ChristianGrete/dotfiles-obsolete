@@ -10,11 +10,11 @@ if [ $? -ne 0 ]
     exit 1
 fi
 
-targets=$(walk "$DOTFILES")
+targets="$(walk "$DOTFILES")"
 
 if [ $? -ne 0 ]
   then
-    echo '-- Error! Index dotfiles targets.' >&2
+    echo '-- Error! Listing dotfiles targets failed.' >&2
     echo
     exit 1
 fi

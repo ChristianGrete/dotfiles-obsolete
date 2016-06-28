@@ -1,4 +1,4 @@
 # POSIX compliant function to update Git remote refs
 push () {
-  git push -v "${2:-origin}" "${1:-$(branch)}"
+  command git push -v "${2:-origin}" "${1:-$(branch)}" 2>/dev/null
 }

@@ -7,7 +7,7 @@ exists () {
       return 1
   fi
 
-  "$1" --version >/dev/null 2>&1
+  command "$1" --version >/dev/null 2>&1
 
   if [ $? -eq 127 ]
     then

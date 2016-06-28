@@ -26,7 +26,11 @@ symlink () {
       printf "$2: file already exists" >&2
       printf ', replace? (y/n [n]) '
 
-      set -- "$1" "$2" "$(read answer; echo $anwser | cut -c 1)"
+      set -- "$1" "$2" "$(
+        read answer
+
+        printf $anwser | cut -c 1
+      )"
 
       if [ "$3" != y ] && [ "$3" != Y ]
         then

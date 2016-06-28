@@ -3,7 +3,7 @@ branch () {
   set -- $(
     ref=$(command git symbolic-ref --quiet HEAD 2>/dev/null)
 
-    echo $? $ref
+    printf "$? $ref"
   )
 
   if [ $1 -ne 0 ]
@@ -13,7 +13,7 @@ branch () {
       set -- $(
         ref=$(command git rev-parse --short HEAD 2>/dev/null)
 
-        echo $? $ref
+        printf "$? $ref"
       )
 
       [ $1 -ne 0 ] && return $1

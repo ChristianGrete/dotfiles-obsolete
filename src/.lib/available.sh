@@ -7,7 +7,11 @@ available () {
       return 1
   fi
 
-  set -- $(location="$(command -v $1 2>/dev/null)"; echo "$location" $?) $1
+  set -- $(
+    location="$(command -v $1 2>/dev/null)"
+
+    printf "$location $?"
+  ) $1
 
   [ $# -gt 3 ] && set -- $2 $3 $4 # TODO: Check for 'alias'
 
@@ -17,7 +21,15 @@ available () {
     then
       if [ $2 -eq 0 ]
         then
-          $(available $(key='$'$(echo $3); eval $1; eval "echo $key") 2>/dev/null)
+          $(
+            available $(
+              key='$'$(echo $3)
+
+              eval $1
+
+              eval 'printf "$key"'
+            ) 2>/dev/null
+          )
 
           [ $? -eq 0 ] && return
       fi

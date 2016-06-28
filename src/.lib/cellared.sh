@@ -13,7 +13,11 @@ cellared () {
 
   [ $1 -ne 0 ] && return $1
 
-  set -- "$2" $(brews=$(brew ls --versions "$2" 2>/dev/null); echo $? "$brews")
+  set -- "$2" $(
+    brews=$(brew ls --versions "$2" 2>/dev/null)
+
+    printf "$? $brews"
+  )
 
   if [ $# -lt 3 ] || [ $2 -ne 0 ]
     then

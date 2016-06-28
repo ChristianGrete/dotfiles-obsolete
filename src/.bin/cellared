@@ -1,5 +1,3 @@
 #!/bin/sh
 
-. "$HOME/.lib/cellared.sh"
-
-cellared "$1"
+. "$HOME/.lib/cellared.sh" && cellared "$1"

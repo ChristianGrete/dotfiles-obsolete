@@ -1,5 +1,3 @@
 #!/bin/sh
 
-. "$HOME/.lib/contains.sh"
-
-contains "$1" "$2"
+. "$HOME/.lib/contains.sh" && contains "$1" "$2"

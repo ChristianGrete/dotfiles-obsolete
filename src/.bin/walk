@@ -1,5 +1,3 @@
 #!/bin/sh
 
-. "$HOME/.lib/walk.sh"
-
-walk "${1:-$(pwd)}"
+. "$HOME/.lib/walk.sh" && walk "${1:-$(pwd)}"

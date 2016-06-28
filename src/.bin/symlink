@@ -1,5 +1,3 @@
 #!/bin/sh
 
-. "$HOME/.lib/symlink.sh"
-
-symlink "$1" "$2"
+. "$HOME/.lib/symlink.sh" && symlink "$1" "$2"

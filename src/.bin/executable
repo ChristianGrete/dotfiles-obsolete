@@ -1,5 +1,3 @@
 #!/bin/sh
 
-. "$HOME/.lib/executable.sh"
-
-executable "$1"
+. "$HOME/.lib/executable.sh" && executable "$1"

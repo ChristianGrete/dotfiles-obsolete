@@ -2,6 +2,4 @@
 
 . "$HOME/.lib/push.sh"
 
-push "${1:-HEAD}" "${2:-origin}"
-
-exit $?
+push "${1:-$(branch)}" "${2:-origin}"

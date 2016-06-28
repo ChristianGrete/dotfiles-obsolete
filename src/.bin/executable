@@ -3,5 +3,3 @@
 . "$HOME/.lib/executable.sh"
 
 executable "$1"
-
-exit $?

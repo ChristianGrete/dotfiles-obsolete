@@ -3,5 +3,3 @@
 . "$HOME/.lib/cellared.sh"
 
 cellared "$1"
-
-exit $?

@@ -3,5 +3,3 @@
 . "$HOME/.lib/available.sh"
 
 available $1
-
-exit $?

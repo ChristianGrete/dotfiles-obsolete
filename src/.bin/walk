@@ -3,5 +3,3 @@
 . "$HOME/.lib/walk.sh"
 
 walk "${1:-$(pwd)}"
-
-exit $?

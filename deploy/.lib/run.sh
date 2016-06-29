@@ -19,5 +19,5 @@ run () (
 
   shift 1
 
-  $file $@
+  command $file $@
 )

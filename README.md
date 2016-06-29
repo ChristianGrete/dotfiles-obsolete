@@ -8,6 +8,7 @@ These are my personal __dotfiles__ to personalize and setup my machine.
 
 ### Installation
 __This has only been tested on a Mac! Make sure to install the [Command Line Tools for Xcode](https://developer.apple.com/downloads/index.action?=command%20line%20tools) first!__
+
 Then run the following command (without the `$`) in your terminal to setup the dotfiles:
 ```sh
 $ git clone https://github.com/ChristianGrete/dotfiles.git "$HOME/.dotfiles" && "$HOME/.dotfiles/bin/deploy"

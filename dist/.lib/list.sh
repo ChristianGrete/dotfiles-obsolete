@@ -7,9 +7,9 @@ list () (
         return 1
   fi
 
-  [ $(expr "$1" : '^\/') -eq 0 ] && set -- "$(pwd)/$1"
+  [ "$1" != / ] && [ $(expr "$1" : '^\/') -eq 0 ] && set -- "$(pwd)/$1"
 
-  [ "$(echo "$1" | cut -c ${#1})" = / ] && set -- "${1%?}"
+  [ "$(echo "$1" | cut -c ${#1})" != / ] && set -- "$1/"
 
   IFS='
 '
@@ -20,7 +20,7 @@ list () (
         then
           echo "$field"
         else
-          echo "$1/$(printf "$field" | sed 's/^\.\///')"
+          echo "$1$(printf "$field" | sed 's/^\.\///')"
       fi
   done
 )

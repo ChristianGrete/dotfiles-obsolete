@@ -26,8 +26,8 @@ for tag in $(git tag -l)
     fi
 done
 
-git add deploy
-git commit -m "release(v$VERSION): deploy [ci skip]"
+git add dist
+git commit -m "release(v$VERSION): distribute [ci skip]"
 git push origin master
 
 git tag -a "$VERSION" -m "v$VERSION"

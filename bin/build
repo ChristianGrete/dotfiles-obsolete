@@ -4,4 +4,4 @@ cd "$(dirname "$0")/.."
 
 . "${PWD:=$(pwd)}/bin/clean"
 
-cp -R "$PWD/src" "$PWD/deploy"
+cp -R "$PWD/src" "$PWD/dist"

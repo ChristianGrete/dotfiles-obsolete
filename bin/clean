@@ -4,4 +4,4 @@ cd "$(dirname "$0")/.."
 
 find "${PWD:=$(pwd)}" -name '.DS_Store' -type f -exec rm {} +
 
-rm -rf "$PWD/deploy"
+rm -rf "$PWD/dist"

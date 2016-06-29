@@ -29,7 +29,7 @@ symlink () {
       set -- "$1" "$2" "$(
         read answer
 
-        printf $anwser | cut -c 1
+        printf "$anwser" | cut -c 1
       )"
 
       if [ "$3" != y ] && [ "$3" != Y ]

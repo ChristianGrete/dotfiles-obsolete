@@ -1,7 +1,3 @@
 #!/bin/sh
 
-. "$HOME/.lib/executable.sh"
-
-executable "$1"
-
-exit $?
+. "$HOME/.lib/executable.sh" && executable "$1"

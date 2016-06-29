@@ -3,6 +3,7 @@ walk () (
   if [ ! -d "${1:=$(pwd)}" ] || [ ! -r "$1" ]
       then
         echo "$1: directory not found or not readable" >&2
+
         return 1
   fi
 
@@ -29,6 +30,4 @@ $field"
           fi
       fi
   done
-
-  return $?
 )

@@ -1,7 +1,3 @@
 #!/bin/sh
 
-. "$HOME/.lib/exists.sh"
-
-exists "$1"
-
-exit $?
+. "$HOME/.lib/exists.sh" && exists "$1"

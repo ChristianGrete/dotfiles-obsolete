@@ -3,6 +3,7 @@ cellared () {
   if [ -z ${1:+formula} ]
     then
       echo 'formula: parameter not set or null' >&2
+
       return 1
   fi
 
@@ -10,24 +11,20 @@ cellared () {
 
   set -- $? "$1"
 
-  if [ $1 -ne 0 ]
-    then
-      return $1
-  fi
+  [ $1 -ne 0 ] && return $1
 
-  set -- "$2" $(brews=$(brew ls --versions "$2" 2>&1); echo $? "$brews")
+  set -- "$2" $(
+    brews=$(brew ls --versions "$2" 2>/dev/null)
+
+    printf "$? $brews"
+  )
 
   if [ $# -lt 3 ] || [ $2 -ne 0 ]
     then
       echo "$1: brew not found" >&2
 
-    if [ $2 -eq 0 ]
-      then
-        return 1
-    fi
+      [ $2 -eq 0 ] && return 1
 
-    return $2
+      return $2
   fi
-
-  return 0
 }

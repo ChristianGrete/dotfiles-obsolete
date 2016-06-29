@@ -1,7 +1,3 @@
 #!/bin/sh
 
-. "$HOME/.lib/list.sh"
-
-list "${1:-$(pwd)}"
-
-exit $?
+. "$HOME/.lib/list.sh" && list "${1:-$(pwd)}"

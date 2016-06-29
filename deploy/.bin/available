@@ -1,7 +1,3 @@
 #!/bin/sh
 
-. "$HOME/.lib/available.sh"
-
-available $1
-
-exit $?
+. "$HOME/.lib/available.sh" && available $1

@@ -1,22 +1,25 @@
+binary = "{$binary,*.{ai,bmp,eps,gif,jpeg,jpg,pdf,png,psb,psd,raw,swf,tif,tiff,ttf}}"
 encoding = "UTF-8"
-fontName = "Panic Sans"
+fontName = "DejaVu Sans Mono"
 fontSize = 15
-include = "{$include,.bash*,.bin,.dotfiles*,.editorconfig,.gem,.git*,.htaccess,.lib,.node*,.npm*,.oh-my-zsh,.profile*,.sbin,.ssh,.tm_properties,.zsh*}"
+include = "{$include,.{bash*,bin,dotfiles*,editorconfig,gem,git?*,htaccess,lib,node*,npm*,oh-my-zsh,profile[s],sbin,ssh,tm_properties,zsh*}}"
 invisiblesMap = " ·\n¶\t›"
 showInvisibles = true
-softWrap = true
 softTabs = true
+softWrap = true
 spellChecking = true
-spellingLanguage = 'en'
+spellingLanguage = "en"
 tabSize = 2
 windowTitle = "$TM_DISPLAYNAME — ${CWD/^.*\///}"
 wrapColumn = 80
 
-[ "*.{ai,bmp,eps,gif,jpeg,jpg,pdf,png,psb,psd,raw,swf,tif,tiff,ttf}" ]
-  binary = true
-
 [ source ]
-  softWrap = false
+softWrap = false
 
 [ source.tm-properties ]
-  spellChecking = false
+spellChecking = false
+
+[ text.html.markdown ]
+softTabs = false
+tabSize = 4
+wrapColumn = "Use Window Frame"

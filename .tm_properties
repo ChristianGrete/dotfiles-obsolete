@@ -1,10 +1,22 @@
+encoding = "UTF-8"
 include = "{$include,.bash*,.bin,.dotfiles*,.editorconfig,.git*,.lib,.profile,.tm_properties,.zsh*}"
 projectDirectory = "$CWD"
 softTabs = true
+spellChecking = true
+spellingLanguage = "en"
 tabSize = 2
-windowTitle = "$TM_DISPLAYNAME — dotfiles"
+windowTitle = "$TM_DISPLAYNAME — dotfiles@$TM_SCM_BRANCH"
 wrapColumn = 80
 
+[ attr.untitled ]
+fileType = source.shell
+
 [ ".dotfilesignore" ]
-  fileType = "text.plain"
-  spellChecking = false
+fileType = source.regexp.python
+spellChecking = false
+
+[ "{.,}{bash*,bin/*,lib/*.sh,profile,script/*}" ]
+fileType = source.shell
+
+[ "*.zsh*" ]
+fileType = source.zsh

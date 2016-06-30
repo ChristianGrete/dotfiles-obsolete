@@ -1,5 +1,8 @@
 encoding = "UTF-8"
-include = "{$include,.bash*,.bin,.dotfiles*,.editorconfig,.git*,.lib,.profile,.tm_properties,.zsh*}"
+excludeInDotfiles= "{config,dist}"
+excludeInFileChooser = "{$excludeInFileChooser,$excludeInDotfiles}"
+excludeInFolderSearch = "{$excludeInFolderSearch,$excludeInDotfiles}"
+include = "{$include,.{bash*,bin,dotfilesignore,editorconfig,git?*,lib,profile,tm_properties,zsh*}}"
 projectDirectory = "$CWD"
 softTabs = true
 spellChecking = true

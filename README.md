@@ -2,7 +2,7 @@
 
 > Christian Grete’s personal dotfiles
 
-These are my personal __dotfiles__ to personalize and setup my machine.
+These are my __dotfiles__ to personalize and setup my machine.
 
 ## Getting started
 

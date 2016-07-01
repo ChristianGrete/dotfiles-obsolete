@@ -1,4 +1,4 @@
-# dotfiles
+# [![dotfiles](https://cdn.rawgit.com/ChristianGrete/dotfiles/master/logo.svg "dotfiles")](https://github.com/ChristianGrete/dotfiles)
 
 > Christian Grete’s personal dotfiles
 

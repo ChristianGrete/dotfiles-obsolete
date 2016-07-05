@@ -70,13 +70,24 @@ alias unbrew='brew rm'
 # Import of machine specific settings
 if [ -d "$HOME/.profiles" ]
   then
-    for profile in `list "$HOME/.profiles"`
+    ifs="$IFS" && IFS='
+'
+
+    for field in $(list "$HOME/.profiles")
       do
-        if [ -r "$profile" ]
+        if [ $(expr "$field" : '^\/') -ne 0 ]
           then
-            source "$profile"
+            entry="$field"
+          else
+            entry="$entry
+$field"
+        fi
+
+        if [ -r "$entry" ]
+          then
+            source "$entry"
         fi
     done
 
-    unset profile
+    IFS="$ifs" && unset field ifs
 fi

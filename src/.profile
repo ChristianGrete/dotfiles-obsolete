@@ -70,7 +70,7 @@ alias unbrew='brew rm'
 # Import of machine specific settings
 if [ -d "$HOME/.profiles" ]
   then
-    for profile in `walk "$HOME/.profiles"`
+    for profile in `list "$HOME/.profiles"`
       do
         if [ -r "$profile" ]
           then

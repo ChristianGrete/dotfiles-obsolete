@@ -34,7 +34,7 @@ if [ -d "$HOME/.oh-my-zsh" ]
 
     cd "$HOME/.oh-my-zsh"
 
-    git checkout master && git pull origin master
+    git pull -rv --stat origin master
 
     if [ $? -ne 0 ]
       then

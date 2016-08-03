@@ -4,6 +4,12 @@ export PATH="$HOME/.bin:$HOME/.sbin:$PATH"
 # Path to Homebrew's executables
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 
+# Try to set `mate` as default editor
+if available mate >/dev/null 2>&1
+  then
+    export EDITOR='/usr/local/bin/mate -w'
+fi
+
 # Use `npm run bower` as if Bower was installed globally
 if ! available bower >/dev/null 2>&1
   then

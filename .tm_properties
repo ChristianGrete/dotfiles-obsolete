@@ -4,6 +4,7 @@ excludeInFileChooser = "{$excludeInFileChooser,$excludeInDotfiles}"
 excludeInFolderSearch = "{$excludeInFolderSearch,$excludeInDotfiles}"
 include = "{$include,.{bash*,bin,dotfilesignore,editorconfig,git?*,lib,profile,tm_properties,zsh*}}"
 projectDirectory = "$CWD"
+showIndentGuides = false
 softTabs = true
 spellChecking = true
 spellingLanguage = "en"

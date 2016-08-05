@@ -1,3 +1,5 @@
+TM_GIT = "/usr/local/bin/git"
+
 binary = "{$binary,*.{ai,bmp,eps,gif,jpeg,jpg,pdf,png,psb,psd,raw,swf,tif,tiff,ttf}}"
 encoding = "UTF-8"
 fontName = "DejaVu Sans Mono"

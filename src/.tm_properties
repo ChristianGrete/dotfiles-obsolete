@@ -13,7 +13,7 @@ softWrap = true
 spellChecking = true
 spellingLanguage = "en"
 tabSize = 2
-windowTitle = "$TM_DISPLAYNAME — ${CWD/^.*\///}"
+windowTitle = "$TM_DISPLAYNAME — ${CWD/^.*\///}${TM_SCM_BRANCH:+@$TM_SCM_BRANCH}"
 wrapColumn = 80
 
 [ source ]

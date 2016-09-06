@@ -89,7 +89,7 @@ if [ -d "$HOME/.profiles" ]
 $field"
         fi
 
-        if [ -r "$entry" ]
+        if [ "$entry" != "$HOME/.profiles/README.md" ] && [ -r "$entry" ]
           then
             source "$entry"
         fi

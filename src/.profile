@@ -13,7 +13,7 @@ fi
 # Use `npm run bower` as if Bower was installed globally
 if ! available bower >/dev/null 2>&1
   then
-    alias bower='nr bower --'
+    alias bower='node_modules/bower/bin/bower'
 fi
 
 # Shortcut to list all Homebrew packages and their versions
@@ -31,13 +31,13 @@ alias deploy='run deploy'
 # Use `npm run grunt` as if Grunt was installed globally
 if ! available grunt >/dev/null 2>&1
   then
-    alias grunt='nr grunt --'
+    alias grunt='node_modules/grunt-cli/bin/grunt'
 fi
 
 # Use `npm run gulp` as if gulp was installed globally
 if ! available gulp >/dev/null 2>&1
   then
-    alias gulp='nr gulp --'
+    alias gulp='node_modules/gulp-cli/bin/gulp.js'
 fi
 
 # Shortcut to cleanly invoke `npm install` without progress bar
@@ -67,7 +67,7 @@ fi
 # Use `npm run typings` as if Typings was installed globally
 if ! available typings >/dev/null 2>&1
   then
-    alias typings='nr typings --'
+    alias typings='node_modules/typings/dist/bin.js'
 fi
 
 # Shortcut to uninstall a specific Homebrew package

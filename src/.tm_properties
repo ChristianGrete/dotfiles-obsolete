@@ -14,6 +14,7 @@ softTabs = true
 softWrap = true
 spellChecking = false
 tabSize = 2
+theme = "A4299D9B-1DE5-4BC4-87F6-A757E71B1597"
 windowTitle = "$TM_DISPLAYNAME — ${CWD/^.*\///}${TM_SCM_BRANCH:+@$TM_SCM_BRANCH}"
 wrapColumn = 80
 

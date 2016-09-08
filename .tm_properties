@@ -3,24 +3,57 @@ excludeInDotfiles= "{config,dist}"
 excludeInFileChooser = "{$excludeInFileChooser,$excludeInDotfiles}"
 excludeInFolderSearch = "{$excludeInFolderSearch,$excludeInDotfiles}"
 include = "{$include,.{bash*,bin,dotfilesignore,editorconfig,git?*,lib,pro{file,jects},tm_properties,zsh*}}"
+invisiblesMap = " ␣\n↵\t⇥"
 projectDirectory = "$CWD"
-showIndentGuides = false
+showIndentGuides = true
 softTabs = true
-spellChecking = true
-spellingLanguage = "en"
+softWrap = true
+spellChecking = false
 tabSize = 2
-windowTitle = "$TM_DISPLAYNAME — dotfiles@$TM_SCM_BRANCH"
+windowTitle = "$TM_DISPLAYNAME — dotfiles${TM_SCM_BRANCH:+@$TM_SCM_BRANCH}"
 wrapColumn = 80
 
 [ attr.untitled ]
 fileType = source.shell
 
+[ source ]
+softWrap = false
+
+[ text.git-commit ]
+showIndentGuides = false
+softTabs = false
+softWrap = false
+spellChecking = true
+spellingLanguage = "en"
+tabSize = 4
+
+[ source.git-config ]
+showIndentGuides = false
+
+[ text.html.markdown ]
+showIndentGuides = false
+softTabs = false
+spellChecking = true
+spellingLanguage = "en"
+tabSize = 4
+wrapColumn = "Use Window Frame"
+
+[ text.xml ]
+softWrap = false
+
 [ ".dotfilesignore" ]
 fileType = source.regexp.python
+showIndentGuides = false
 spellChecking = false
 
 [ "{.,}{bash*,bin/*,lib/*.sh,profile,script/*}" ]
 fileType = source.shell
+
+[ "*.md*" ]
+fileType = text.html.markdown
+
+[ "*.svg*" ]
+fileType = text.xml
 
 [ "*.zsh*" ]
 fileType = source.zsh

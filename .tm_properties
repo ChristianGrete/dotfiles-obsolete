@@ -6,6 +6,7 @@ include = "{$include,.{bash*,bin,dotfilesignore,editorconfig,git?*,lib,pro{file,
 invisiblesMap = " ␣\n↵\t⇥"
 projectDirectory = "$CWD"
 showIndentGuides = true
+showInvisibles = true
 softTabs = true
 softWrap = true
 spellChecking = false
@@ -30,6 +31,10 @@ tabSize = 4
 [ source.git-config ]
 showIndentGuides = false
 
+[ source.tm-properties ]
+showIndentGuides = false
+spellChecking = false
+
 [ text.html.markdown ]
 showIndentGuides = false
 softTabs = false
@@ -41,13 +46,11 @@ wrapColumn = "Use Window Frame"
 [ text.xml ]
 softWrap = false
 
-[ ".dotfilesignore" ]
-fileType = source.regexp.python
-showIndentGuides = false
-spellChecking = false
+[ ".editorconfig*" ]
+fileType = source.tm-properties
 
-[ "{.,}{bash*,bin/*,lib/*.sh,profile,script/*}" ]
-fileType = source.shell
+[ ".gitignore*" ]
+fileType = source.git-config
 
 [ "*.md*" ]
 fileType = text.html.markdown
@@ -57,3 +60,11 @@ fileType = text.xml
 
 [ "*.zsh*" ]
 fileType = source.zsh
+
+[ ".dotfilesignore" ]
+fileType = source.regexp.python
+showIndentGuides = false
+spellChecking = false
+
+[ "{.,}{bash*,bin/*,lib/*.sh,profile,script/*}" ]
+fileType = source.shell

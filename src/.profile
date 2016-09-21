@@ -119,10 +119,3 @@ if ! available gulp >/dev/null 2>&1
   then
     alias gulp='command ./node_modules/gulp-cli/bin/gulp.js'
 fi
-
-# TODO: Move to `dotfiles-typings-profile`
-# Use local `typings` as if Typings was installed globally
-if ! available typings >/dev/null 2>&1
-  then
-    alias typings='command ./node_modules/typings/dist/bin.js'
-fi

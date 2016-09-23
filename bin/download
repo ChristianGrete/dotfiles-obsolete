@@ -68,3 +68,8 @@ EOF)" >&2
 fi
 
 git clone https://github.com/ChristianGrete/dotfiles.git "$HOME/.dotfiles"
+
+if [ $? -eq 0 ]
+  then
+    "$HOME/.dotfiles/bin/deploy"
+fi

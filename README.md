@@ -7,9 +7,9 @@ These are my __dotfiles__ to personalize and setup my machine.
 ## Getting started
 
 ### Installation
-__This has only been tested on a Mac! Make sure to install the [Command Line Tools for Xcode](https://developer.apple.com/downloads/index.action?=command%20line%20tools) first!__
+__This has only been tested on a Mac!__
 
-Then run the following command (without the `$`) in your terminal to setup the dotfiles:
+Run the following command (without the `$`) in your terminal to setup the dotfiles (should work with bash, ksh, zsh):
 ```sh
 $ sh <(curl -fLSs https://git.io/viFK3)
 ```

@@ -1,25 +1,51 @@
-binary = "{$binary,*.{ai,bmp,eps,gif,jpeg,jpg,pdf,png,psb,psd,raw,swf,tif,tiff,ttf}}"
+TM_GIT = "/usr/local/bin/git"
+
+binary = "{$binary,*.{ai,bmp,eps,gif,jp{eg,g},pdf,png,ps{b,d},raw,swf,tif,tiff,ttf}}"
 encoding = "UTF-8"
+exclude = "{$exclude,.DS_Store}"
 fontName = "DejaVu Sans Mono"
 fontSize = 15
-include = "{$include,.{bash*,bin,dotfiles*,editorconfig,gem,git?*,htaccess,lib,node*,npm*,oh-my-zsh,profile[s],sbin,ssh,tm_properties,zsh*}}"
-invisiblesMap = " ·\n¶\t›"
+include = "{$include,.{bash*,bin,dotfiles*,editorconfig,gem,git?*,htaccess,lib,node*,npm*,oh-my-zsh,pro{file,jects},profiles,sbin,ssh,tm_properties,zsh*}}"
+invisiblesMap = " ␣\n↵\t⇥"
+projectDirectory = "$CWD"
+showIndentGuides = true
 showInvisibles = true
 softTabs = true
 softWrap = true
-spellChecking = true
-spellingLanguage = "en"
+spellChecking = false
 tabSize = 2
-windowTitle = "$TM_DISPLAYNAME — ${CWD/^.*\///}"
+theme = "A4299D9B-1DE5-4BC4-87F6-A757E71B1597"
+windowTitle = "$TM_DISPLAYNAME — ${CWD/^.*\///}${TM_SCM_BRANCH:+@$TM_SCM_BRANCH}"
 wrapColumn = 80
 
 [ source ]
 softWrap = false
 
+[ text.git-commit ]
+showIndentGuides = false
+softTabs = false
+softWrap = false
+spellChecking = true
+spellingLanguage = "en"
+tabSize = 4
+
+[ source.git-config ]
+showIndentGuides = false
+
 [ source.tm-properties ]
+showIndentGuides = false
 spellChecking = false
 
 [ text.html.markdown ]
+showIndentGuides = false
 softTabs = false
+spellChecking = true
+spellingLanguage = "en"
 tabSize = 4
 wrapColumn = "Use Window Frame"
+
+[ ".editorconfig*" ]
+fileType = source.tm-properties
+
+[ ".gitignore*" ]
+fileType = source.git-config

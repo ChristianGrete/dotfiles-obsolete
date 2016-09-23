@@ -1,8 +1,5 @@
 [core]
 	editor = mate -w
-[user]
-	name = Christian Grete
-	email = webmaster@christiangrete.com
 [push]
 	default = current
 [pull]

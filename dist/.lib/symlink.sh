@@ -1,15 +1,15 @@
 # POSIX compliant function to carefully create symbolic links
 symlink () {
-  if [ -z ${1:+target} ]
+  if [ -z ${1:+source} ]
     then
-      echo 'target: parameter not set or null' >&2
+      echo 'source: parameter not set or null' >&2
 
       return 1
   fi
 
-  if [ -z ${2:+link} ]
+  if [ -z ${2:+target} ]
     then
-      echo 'link: parameter not set or null' >&2
+      echo 'target: parameter not set or null' >&2
 
       return 1
   fi

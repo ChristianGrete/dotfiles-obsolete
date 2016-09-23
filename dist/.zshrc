@@ -7,6 +7,6 @@ CASE_SENSITIVE=true
 COMPLETION_WAITING_DOTS=true
 ZSH_THEME=christiangrete
 
-plugins=(git textmate)
+plugins=(git)
 
 source "$ZSH/oh-my-zsh.sh"

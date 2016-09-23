@@ -1,0 +1,70 @@
+#!/bin/sh
+
+if [ "$(uname)" = Darwin ]
+  then
+    if [ ! -d "$(command xcode-select -p 2>/dev/null)" ]
+      then
+        printf "$(cat <<EOF
+Downloading dotfiles requires the command line developer tools to be installed
+and the path of the active developer directory to be set.
+EOF)" >&2
+
+        if command xcode-select --install >/dev/null 2>&1
+          then
+            printf "$(cat <<EOF
+ Please choose an
+option in the dialog that should have opened to install the command line
+developer tools and come back here to continue when finished or try to download
+again later.
+EOF)" >&2
+
+            printf ' Continue download? (y/n [n]) '
+
+            answer="$(read answer && printf "$answer" | cut -c 1)"
+
+            echo
+
+            if [ "$answer" != y ] && [ "$answer" != Y ]
+              then
+                echo 'Download cancelled.' >&2
+
+                exit 1
+            fi
+
+            unset answer
+
+            if [ ! -d "$(command xcode-select -p 2>/dev/null)" ]
+              then
+                echo "$(cat <<EOF
+Unable to find an active developer directory. Maybe the command line developer
+tools installation was not yet finished or not successful. Try again.
+EOF)" >&2
+
+                exit 1
+            fi
+        else
+          echo "$(cat <<EOF
+ Please use
+\`xcode-select -s <path>\` to set a path (or see \`man xcode-select\`) and then
+try to download again.
+EOF)" >&2
+
+          exit 1
+        fi
+    fi
+elif ! git --version >/dev/null 2>&1
+  then
+    # TODO: Prompt whether user wants to install Git
+    # See: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+    # And: https://git-scm.com/download/linux
+
+    echo "$(cat <<EOF
+Downloading dotfiles requires Git to be installed. An automated installation at
+this point is planned for the future but has to be done manually for this time.
+Please see 'https://git-scm.com/download/linux' and try downloading again later.
+EOF)" >&2
+
+    exit 1
+fi
+
+git clone https://github.com/ChristianGrete/dotfiles.git "$HOME/.dotfiles"

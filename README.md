@@ -11,7 +11,7 @@ __This has only been tested on a Mac! Make sure to install the [Command Line Too
 
 Then run the following command (without the `$`) in your terminal to setup the dotfiles:
 ```sh
-$ curl -fLSs https://git.io/viFK3 | sh
+$ sh <(curl -fLSs https://git.io/viFK3)
 ```
 This will clone the Git repository into your home directory, check for a [Homebrew](http://brew.sh) installation and install it if necessary. It will also update Homebrew itself and all of its packages, install a few dependencies (`git`, `node`, `ruby` and `zsh` with _Oh-My-Zsh_ — if any of these have not already been installed) and update `npm` and its global packages to the latest versions. After that it will create symbolic links to the dotfiles into your home directory.
 

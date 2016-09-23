@@ -78,7 +78,7 @@ echo
 echo 'Updating npm...'
 echo
 
-ni -g npm && npm up -g
+npm cache -s clean; npm i --loglevel http --no-progress -g npm && npm up -g
 
 if [ $? -ne 0 ]
   then

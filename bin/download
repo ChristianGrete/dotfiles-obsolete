@@ -20,7 +20,7 @@ EOF)" >&2
 
             printf ' Continue download? (y/n [n]) '
 
-            answer="$(read answer && printf "$answer" | cut -c 1)"
+            answer="$(read answer </dev/tty && printf "$answer" | cut -c 1)"
 
             echo
 

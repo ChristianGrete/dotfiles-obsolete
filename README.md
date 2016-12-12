@@ -7,13 +7,13 @@ These are my __dotfiles__ to personalize and setup my machine.
 ## Getting started
 
 ### Installation
-__This has only been tested on a Mac!__
+__This has currently only been tested on a Mac!__
 
-Run the following command (without the `$`) in your terminal to setup the dotfiles (should work with bash, ksh, zsh):
+Run the following command in your terminal to install the dotfiles:
 ```sh
-$ sh <(curl -fLSs https://git.io/viFK3)
+curl -fLSs https://git.io/viFK3 | sh
 ```
-This will clone the Git repository into your home directory, check for a [Homebrew](http://brew.sh) installation and install it if necessary. It will also update Homebrew itself and all of its packages, install a few dependencies (`git`, `node`, `ruby` and `zsh` with _Oh-My-Zsh_ — if any of these have not already been installed) and update `npm` and its global packages to the latest versions. After that it will create symbolic links to the dotfiles into your home directory.
+This command will clone the Git repository into your home directory, check for a [Homebrew](http://brew.sh) installation and install it if necessary. It will also update Homebrew itself and all of its packages, install a few dependencies (`git`, `node`, `ruby` and `zsh` with _Oh-My-Zsh_ — if any of these have not already been installed) and update `npm` and its global packages to the latest versions. After that it will create symbolic links to the dotfiles into your home directory.
 
 __Existing files won’t be harmed:__ This script will ask you whether to replace existing files and create a backup of the old files if you choose to do so.
 

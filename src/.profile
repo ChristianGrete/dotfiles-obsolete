@@ -1,8 +1,29 @@
-# Path to my executables
-export PATH="${HOME:=}/.bin:$HOME/.sbin:$PATH"
+# Optimization of the PATH variable
+ifs="$IFS" && IFS=':'
 
-# Path to Homebrew's executables
-export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+for directory in $(printf "$PATH")
+  do
+    if [ "${directory#*'/usr/local/'}" = "$directory" ]
+      then
+        directories="$directories:$directory"
+    fi
+done
+
+PATH="${directories#?}"
+
+IFS="$ifs" && unset directories directory ifs
+
+# Path to local system executables
+[ -d '/usr/local/sbin' ] && PATH="/usr/local/sbin:$PATH"
+
+# Path to local executables
+[ -d '/usr/local/bin' ] && PATH="/usr/local/bin:$PATH"
+
+# Path to my system executables
+[ -d "${HOME:=}/.sbin" ] && PATH="$HOME/.sbin:$PATH"
+
+# Path to my executables
+export PATH="$HOME/.bin:$PATH"
 
 # Support for source command
 if ! available source >/dev/null 2>&1

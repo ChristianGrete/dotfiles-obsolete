@@ -31,6 +31,9 @@ if ! available source >/dev/null 2>&1
     alias source='.'
 fi
 
+# Import of base aliases
+[ -r "$HOME/.aliases" ] && source "$HOME/.aliases"
+
 # Import of machine specific settings
 if [ -d "$HOME/.profiles" ]
   then

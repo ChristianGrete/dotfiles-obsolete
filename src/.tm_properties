@@ -7,7 +7,9 @@ fontName = "DejaVu Sans Mono"
 fontSize = 15
 include = "{$include,.{aliases,bash*,bin,dotfiles*,editorconfig,gem,git?*,htaccess,lib,node*,npm*,oh-my-zsh,pro{file,jects},profiles,sbin,ssh,tm_properties,zsh*}}"
 invisiblesMap = " ␣\n↵\t⇥"
+leftWindowTitle = "${TM_FILEPATH:+${TM_FILEPATH/${CWD}\///}}"
 projectDirectory = "$CWD"
+rightWindowTitle = "${TM_SCM_BRANCH:+@$TM_SCM_BRANCH}"
 showIndentGuides = true
 showInvisibles = true
 softTabs = true
@@ -15,7 +17,7 @@ softWrap = true
 spellChecking = false
 tabSize = 2
 theme = "A4299D9B-1DE5-4BC4-87F6-A757E71B1597"
-windowTitle = "$TM_DISPLAYNAME — ${CWD/^.*\///}${TM_SCM_BRANCH:+@$TM_SCM_BRANCH}"
+windowTitle = "$leftWindowTitle$rightWindowTitle"
 wrapColumn = 80
 
 [ source ]

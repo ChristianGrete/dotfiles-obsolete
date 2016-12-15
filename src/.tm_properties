@@ -1,3 +1,4 @@
+TM_FULLNAME = "Christian Grete"
 TM_GIT = "/usr/local/bin/git"
 
 binary = "{$binary,*.{ai,bmp,eps,gif,jp{eg,g},pdf,png,ps{b,d},raw,swf,tif,tiff,ttf}}"

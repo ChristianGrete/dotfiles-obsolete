@@ -67,6 +67,12 @@ EOF)" >&2
     exit 1
 fi
 
+echo '----'
+echo "$(pwd)"
+echo '----'
+
+exit 0
+
 git clone https://github.com/ChristianGrete/dotfiles.git "$HOME/.dotfiles"
 
 if [ $? -eq 0 ]

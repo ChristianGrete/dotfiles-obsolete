@@ -1,5 +1,18 @@
 #!/bin/sh
 
+prompt () {
+  printf "$(read answer </dev/tty && printf "$answer")"
+}
+
+confirm () (
+  answer="$(prompt | cut -c 1)"
+
+  if [ "$answer" != y ] && [ "$answer" != Y ]
+    then
+      return 1
+  fi
+)
+
 if [ "$(uname)" = Darwin ]
   then
     if [ ! -d "$(command xcode-select -p 2>/dev/null)" ]
@@ -18,20 +31,16 @@ developer tools and come back here to continue when finished or try to download
 again later.
 EOF)" >&2
 
-            printf ' Continue download? (y/n [n]) '
+            printf '
 
-            answer="$(read answer </dev/tty && printf "$answer" | cut -c 1)"
+Continue download? (y/n [n]) '
 
-            echo
-
-            if [ "$answer" != y ] && [ "$answer" != Y ]
+            if ! confirm
               then
                 echo 'Download cancelled.' >&2
 
                 exit 1
             fi
-
-            unset answer
 
             if [ ! -d "$(command xcode-select -p 2>/dev/null)" ]
               then
@@ -54,28 +63,83 @@ EOF)" >&2
     fi
 elif ! git --version >/dev/null 2>&1
   then
-    # TODO: Prompt whether user wants to install Git
+    # TODO: Prompt whether the user wants to install Git
     # See: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
     # And: https://git-scm.com/download/linux
 
     echo "$(cat <<EOF
 Downloading dotfiles requires Git to be installed. An automated installation at
 this point is planned for the future but has to be done manually for this time.
-Please see 'https://git-scm.com/download/linux' and try downloading again later.
+Please see https://git-scm.com/download/linux and try downloading again later.
 EOF)" >&2
 
     exit 1
 fi
 
-echo '----'
-echo "$(pwd)"
-echo '----'
+directory="$(pwd)"
 
-exit 0
+if [ ! -d "$directory" ]
+  then
+    directory="$HOME"
+fi
 
-git clone https://github.com/ChristianGrete/dotfiles.git "$HOME/.dotfiles"
+echo "$(cat <<EOF
+By default, dotfiles will be downloaded and placed as a subdirectory into the
+current working directory, which is in this case:
+
+$directory
+EOF)"
+
+echo
+
+printf 'Choose another directory? (y/n [n]) '
+
+if confirm
+  then
+    # TODO: Prompt where the user wants to download dotfiles
+
+    echo; echo "$(cat <<EOF
+Choosing another directory is currently unavailable but planned for the future.
+Please change your working directory manually and then start downloading again.
+EOF)" >&2
+
+    exit 1
+fi
+
+subdirectory='.dotfiles'
+
+echo "$(cat <<EOF
+
+The dotfiles subdirectory will be named "$subdirectory" by default, which will
+result in:
+
+$directory/$subdirectory
+EOF)"
+
+echo
+
+printf 'Rename subdirectory? (y/n [n]) '
+
+if confirm
+  then
+    # TODO: Prompt how the user wants to name the subdirectory
+
+    echo; echo "$(cat <<EOF
+Renaming the subdirectory is currently unavailable but planned for the future.
+Alternatively, you could clone the dotfiles repository manually into your
+desired directory and then execute `bin/deploy` in it.
+EOF)" >&2
+
+    exit 1
+fi
+
+echo
+
+git clone https://github.com/ChristianGrete/dotfiles.git "$directory/$subdirectory"
 
 if [ $? -eq 0 ]
   then
-    "$HOME/.dotfiles/bin/deploy"
+    "$directory/$subdirectory/bin/deploy"
 fi
+
+# unset directory subdirectory

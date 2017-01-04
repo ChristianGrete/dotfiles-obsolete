@@ -133,13 +133,17 @@ EOF)" >&2
     exit 1
 fi
 
+directory="$directory/$subdirectory"
+
+unset subdirectory
+
 echo
 
-git clone https://github.com/ChristianGrete/dotfiles.git "$directory/$subdirectory"
+git clone https://github.com/ChristianGrete/dotfiles.git "$directory"
 
 if [ $? -eq 0 ]
   then
-    "$directory/$subdirectory/bin/deploy"
+    "$directory/bin/deploy"
 fi
 
-# unset directory subdirectory
+# unset directory

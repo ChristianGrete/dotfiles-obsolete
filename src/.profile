@@ -1,4 +1,4 @@
-# Optimization of the PATH variable
+# Optimization of PATH variable
 ifs="$IFS" && IFS=':'
 
 for directory in $(printf "$PATH")

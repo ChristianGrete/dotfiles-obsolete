@@ -4,5 +4,5 @@ if available clear >/dev/null 2>&1
     alias c='clear'
 fi
 
-# Provision of the `editor` command
+# Provision of `editor` command
 alias editor="command vi"

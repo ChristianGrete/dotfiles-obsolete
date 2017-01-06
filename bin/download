@@ -1,5 +1,8 @@
 #!/bin/sh
 
+echo "\$0: $0"
+echo "\$@: $@"
+
 prompt () {
   printf "$(read answer </dev/tty && printf "$answer")"
 }
@@ -139,11 +142,13 @@ unset subdirectory
 
 echo
 
-git clone https://github.com/ChristianGrete/dotfiles.git "$directory"
+# git clone https://github.com/ChristianGrete/dotfiles.git "$directory"
+# directory="$(pwd)"
 
 if [ $? -eq 0 ]
   then
-    "$directory/bin/deploy"
+    # "$directory/bin/deploy" "$directory"
+    echo "$directory"
 fi
 
 # unset directory

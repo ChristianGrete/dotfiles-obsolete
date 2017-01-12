@@ -1,0 +1,15 @@
+#!/bin/sh
+
+if [ $(expr "$(dirname "$0")" : '^\/') -eq 0 ];
+  then
+    echo "$(dirname "$0"): is not abs path"
+fi
+
+cd "$(dirname "$0")/.."
+
+export DOTFILES="$(pwd)"
+
+echo "$(cat <<EOF
+export DOTFILES='$DOTFILES'
+export DOTFILES_VENDORS='$DOTFILES/vendor'
+EOF)" > "$DOTFILES/dist/.profiles/dotfiles.sh"

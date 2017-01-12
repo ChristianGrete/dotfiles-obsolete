@@ -8,7 +8,7 @@ available () {
   fi
 
   set -- $(
-    location="$(command -v $1 2>/dev/null)"
+    location="$(command -v -- $1 2>/dev/null)"
 
     printf "$location $?"
   ) $1

@@ -1,7 +1,15 @@
 #!/bin/sh
 
-echo "\$0: $0"
-echo "\$@: $@"
+if [ "$(basename "$0")" != sh ]
+  then
+    echo "$(cat <<EOF
+Please avoid trying to directly invoke this binary as it is intended to be
+executed as a download task from a remote location. If you are trying to
+download dotfiles, try again using \`curl -fLSs https://git.io/viFK3 | sh\`.
+EOF)" >&2
+
+    exit 1
+fi
 
 prompt () {
   printf "$(read answer </dev/tty && printf "$answer")"
@@ -142,13 +150,9 @@ unset subdirectory
 
 echo
 
-# git clone https://github.com/ChristianGrete/dotfiles.git "$directory"
-# directory="$(pwd)"
+git clone https://github.com/ChristianGrete/dotfiles.git "$directory"
 
 if [ $? -eq 0 ]
   then
-    # "$directory/bin/deploy" "$directory"
-    echo "$directory"
+    "$directory/bin/install"
 fi
-
-# unset directory

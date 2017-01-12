@@ -1,7 +1,7 @@
 echo 'Creating symbolic links...'
 echo
 
-start=$(expr ${#DOTFILES} + 2)
+start=$(expr ${#DOTFILES_ARTIFACT} + 2)
 
 if [ $? -ne 0 ]
   then
@@ -10,7 +10,7 @@ if [ $? -ne 0 ]
     exit 1
 fi
 
-targets="$(walk "$DOTFILES")"
+targets="$(walk "$DOTFILES_ARTIFACT")"
 
 if [ $? -ne 0 ]
   then

@@ -4,6 +4,6 @@ if [ -z ${PWD:+PWD} ]
 fi
 
 export PROJECT="$PWD"
-export DOTFILES="$PROJECT/dist"
-export DOTFILES_LIBRARY="$DOTFILES/.lib"
+export DOTFILES_ARTIFACT="$PROJECT/dist"
+export DOTFILES_LIBRARY="$DOTFILES_ARTIFACT/.lib"
 export SCRIPTS="$PROJECT/script"

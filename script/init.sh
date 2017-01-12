@@ -3,7 +3,7 @@ echo
 
 REAL_HOME="$HOME"
 
-export HOME="$DOTFILES"
+export HOME="$DOTFILES_ARTIFACT"
 export PATH=/usr/bin:/bin:/usr/sbin:/sbin
 
 echo 'Loading profile...'

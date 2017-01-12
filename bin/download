@@ -101,9 +101,8 @@ current working directory, which is in this case:
 $directory
 EOF)"
 
-echo
-
-printf 'Choose another directory? (y/n [n]) '
+printf '
+Choose another directory? (y/n [n]) '
 
 if confirm
   then
@@ -127,9 +126,8 @@ result in:
 $directory/$subdirectory
 EOF)"
 
-echo
-
-printf 'Rename subdirectory? (y/n [n]) '
+printf '
+Rename subdirectory? (y/n [n]) '
 
 if confirm
   then

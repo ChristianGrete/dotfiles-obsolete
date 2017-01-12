@@ -1,15 +1,15 @@
 #!/bin/sh
 
-if [ $(expr "$(dirname "$0")" : '^\/') -eq 0 ];
-  then
-    echo "$(dirname "$0"): is not abs path"
-fi
-
 cd "$(dirname "$0")/.."
 
-export DOTFILES="$(pwd)"
+if [ -z ${PWD:+PWD} ] || [ "$PWD" != "$(pwd)" ]
+  then
+    export PWD="$(pwd)"
+fi
 
-echo "$(cat <<EOF
-export DOTFILES='$DOTFILES'
-export DOTFILES_VENDORS='$DOTFILES/vendor'
-EOF)" > "$DOTFILES/dist/.profiles/dotfiles.sh"
+ROUTINES="$PWD/lib/install"
+
+# for routine in foo bar baz
+#   do
+#     . "$ROUTINES/$routine.sh"
+# done

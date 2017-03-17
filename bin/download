@@ -91,7 +91,7 @@ directory="$(pwd)"
 
 if [ ! -d "$directory" ]
   then
-    directory="$HOME"
+    directory="${HOME:=}"
 fi
 
 echo "$(cat <<EOF

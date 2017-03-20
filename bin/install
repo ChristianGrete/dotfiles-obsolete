@@ -7,9 +7,11 @@ if [ -z ${PWD:+PWD} ] || [ "$PWD" != "$(pwd)" ]
     export PWD="$(pwd)"
 fi
 
-ROUTINES="$PWD/lib/install"
+routines="$PWD/lib/install"
 
-# for routine in foo bar baz
-#   do
-#     . "$ROUTINES/$routine.sh"
-# done
+for routine in prepare splash link
+ do
+   . "$routines/$routine.sh"
+done
+
+unset routine routines

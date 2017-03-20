@@ -137,7 +137,7 @@ if confirm
     echo; echo "$(cat <<EOF
 Renaming the subdirectory is currently unavailable but planned for the future.
 Alternatively, you could clone the dotfiles repository manually into your
-desired directory and then execute `bin/deploy` in it.
+desired directory and then execute `bin/install` in it.
 EOF)" >&2
 
     exit 1

@@ -8,22 +8,22 @@ EOF)" >&2
     exit 1
 fi
 
-dotfiles_sources="$PWD/dist"
+DOTFILES_SOURCES="$PWD/dist"
 
 commit="$(git rev-list --max-count=1 --tags)"
 version="$(git describe --tags $commit)"
 
 echo "$(cat <<EOF
 export DOTFILES='$PWD'
-export DOTFILES_VENDORS='$PWD/vendor'
+export DOTFILES_PACKAGES='$PWD/opt'
 export DOTFILES_VERSION='$version'
-EOF)" > "$dotfiles_sources/.profiles/dotfiles.sh"
+EOF)" > "$DOTFILES_SOURCES/.profiles/dotfiles.sh"
 
 unset commit version
 
 real_home="$HOME"
 
-export HOME="$dotfiles_sources"
+export HOME="$DOTFILES_SOURCES"
 export PATH=/usr/bin:/bin:/usr/sbin:/sbin
 
 . "$HOME/.profile"
@@ -34,7 +34,7 @@ unset real_home
 
 for function in list symlink walk
   do
-    source "$dotfiles_sources/.lib/$function.sh"
+    source "$DOTFILES_SOURCES/.lib/$function.sh"
 done
 
 unset function

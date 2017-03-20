@@ -99,6 +99,7 @@ By default, dotfiles will be downloaded and placed as a subdirectory into the
 current working directory, which is in this case:
 
 $directory
+${directory:-/}
 EOF)"
 
 printf '
@@ -152,5 +153,7 @@ git clone https://github.com/ChristianGrete/dotfiles.git "$directory"
 
 if [ $? -eq 0 ]
   then
+    # TODO: Prompt whether the user wants to proceed with installation
+
     "$directory/bin/install"
 fi

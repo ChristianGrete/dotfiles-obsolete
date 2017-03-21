@@ -1,3 +1,6 @@
+# FIXME: Oh My Zsh is only used for the Git plugin and to customize `$PS1`
+# TODO:  Isolate these features and remove Oh My Zsh from dotfiles
+
 printf 'Locating Oh My Zsh ... '
 
 if [ -d "${ZSH:=$HOME/.oh-my-zsh}" ]

@@ -9,7 +9,7 @@ fi
 
 routines="$PWD/lib/install"
 
-for routine in prepare splash link
+for routine in prepare splash clutter link
  do
    . "$routines/$routine.sh"
 done

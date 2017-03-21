@@ -14,6 +14,8 @@ if [ -d "${ZSH:=$HOME/.oh-my-zsh}" ]
 else
   echo 'not found.'
 
+  echo 'Installing...'
+
   git clone git://github.com/robbyrussell/oh-my-zsh.git "$ZSH"
 
   if [ $? -ne 0 ]

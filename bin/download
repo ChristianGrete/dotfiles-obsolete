@@ -57,7 +57,7 @@ Continue download? (y/n [n]) '
               then
                 echo "$(cat <<EOF
 Unable to find an active developer directory. Maybe the command line developer
-tools installation was not yet finished or not successful. Try again.
+tools installation has not yet finished or failed. Try again.
 EOF)" >&2
 
                 exit 1
@@ -98,7 +98,6 @@ echo "$(cat <<EOF
 By default, dotfiles will be downloaded and placed as a subdirectory into the
 current working directory, which is in this case:
 
-$directory
 ${directory:-/}
 EOF)"
 
@@ -137,7 +136,7 @@ if confirm
     echo; echo "$(cat <<EOF
 Renaming the subdirectory is currently unavailable but planned for the future.
 Alternatively, you could clone the dotfiles repository manually into your
-desired directory and then execute `bin/install` in it.
+desired directory and then execute \`bin/install\` in it.
 EOF)" >&2
 
     exit 1

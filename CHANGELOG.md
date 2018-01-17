@@ -46,7 +46,7 @@ The format is based on [Keep a Changelog][keep-a-changelog-url] and this project
 [0.0.1-alpha]: https://github.com/ChristianGrete/dotfiles/compare/42e6a33da7a62c44a1448dbce60bc06b7af7ea38...0.0.1-alpha
 [42e6a33]: https://github.com/ChristianGrete/dotfiles/commit/42e6a33da7a62c44a1448dbce60bc06b7af7ea38
 
-Copyright © 2015–2017 ([MIT](LICENSE.md)) [Christian Grete](https://christiangrete.com)
+Copyright © 2015–2018 ([MIT](LICENSE.md)) [Christian Grete](https://christiangrete.com)
 
 [github-url]: https://github.com/ChristianGrete/dotfiles
 [keep-a-changelog-url]: http://keepachangelog.com/en/1.0.0/

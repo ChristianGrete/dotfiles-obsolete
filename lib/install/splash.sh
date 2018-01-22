@@ -1,4 +1,4 @@
-echo "$( cat <<EOF
+echo "$(cat <<EOF
                _      _
    |          | | o  | |
  __|   __ _|_ | |    | |  _   ,

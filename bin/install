@@ -13,5 +13,3 @@ for routine in prepare splash clutter link
  do
    . "$routines/$routine.sh"
 done
-
-unset routine routines

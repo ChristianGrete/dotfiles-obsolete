@@ -2,48 +2,34 @@
 
 cd "$(dirname "$0")/.."
 
-if [ -z ${PWD:+_} ]
+if [ -z ${PWD:+PWD} ] || [ "$PWD" != "$(pwd)" ]
   then
     export PWD="$(pwd)"
 fi
 
-REAL_HOME="$HOME"
+dotfiles_sources="$PWD/dist"
 
-export HOME="$PWD/src"
-export LIBRARY="$HOME/.lib"
+real_home="$HOME"
+
+export HOME="$dotfiles_sources"
 export PATH=/usr/bin:/bin:/usr/sbin:/sbin
 
 . "$HOME/.profile"
 
-export HOME="$REAL_HOME"
+export HOME="$real_home"
 
-unset REAL_HOME
+unset real_home
 
-source "$LIBRARY/available.sh"
+for function in available branch
+  do
+    source "$dotfiles_sources/.lib/$function.sh"
+done
 
-if ! available git
-  then
-    exit 1
-fi
+unset function
 
-git checkout master
+ROUTINES="$PWD/lib/setup"
 
-git pull origin master
-
-if ! available brew
-  then
-    ruby -e $(curl -fLSs https://raw.githubusercontent.com/Homebrew/install/master/install)
-
-    if [ $? -ne 0 ]
-      then
-        exit 1
-    fi
-fi
-
-brew update >/dev/null 2>&1
-
-brew upgrade >/dev/null 2>&1
-
-brew install dash
-
-brew cleanup >/dev/null 2>&1
+for ROUTINE in update dependencies
+  do
+    source "$ROUTINES/$ROUTINE.sh"
+done

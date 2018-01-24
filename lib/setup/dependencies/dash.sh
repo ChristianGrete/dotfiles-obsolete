@@ -3,4 +3,4 @@ if [ "$(uname)" != Darwin ] || ! available brew
     continue
 fi
 
-brew install dash
+! brew ls --versions dash >/dev/null 2>&1 && brew install dash

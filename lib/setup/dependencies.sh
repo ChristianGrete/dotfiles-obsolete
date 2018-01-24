@@ -1,6 +1,6 @@
 subroutines="$ROUTINES/$ROUTINE"
 
-for subroutine in brew
+for subroutine in brew dash
   do
     source "$subroutines/$subroutine.sh"
 done

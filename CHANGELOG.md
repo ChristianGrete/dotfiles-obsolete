@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog][keep-a-changelog-url] and this project
 
 ## [Unreleased]
 
+## 0.0.1-gamma
+
+### Summary
+
+- [0.0.1-gamma.1] – 2018-02-08
+- [0.0.1-gamma] – 2018-02-08
+
 ## 0.0.1-beta
 
 ### Summary
@@ -30,7 +37,9 @@ The format is based on [Keep a Changelog][keep-a-changelog-url] and this project
 - [0.0.1-alpha] – 2016-06-24
 - [42e6a33] – 2016-06-10
 
-[Unreleased]: https://github.com/ChristianGrete/dotfiles/compare/0.0.1-beta.7...master
+[Unreleased]: https://github.com/ChristianGrete/dotfiles/compare/0.0.1-gamma.1...master
+[0.0.1-gamma.1]: https://github.com/ChristianGrete/dotfiles/compare/0.0.1-gamma...0.0.1-gamma.1
+[0.0.1-gamma]: https://github.com/ChristianGrete/dotfiles/compare/0.0.1-beta.7...0.0.1-gamma
 [0.0.1-beta.7]: https://github.com/ChristianGrete/dotfiles/compare/0.0.1-beta.6...0.0.1-beta.7
 [0.0.1-beta.6]: https://github.com/ChristianGrete/dotfiles/compare/0.0.1-beta.5...0.0.1-beta.6
 [0.0.1-beta.5]: https://github.com/ChristianGrete/dotfiles/compare/0.0.1-beta.4...0.0.1-beta.5

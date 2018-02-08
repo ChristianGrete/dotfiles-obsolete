@@ -2,33 +2,38 @@
 
 cd "$(dirname "$0")/.."
 
-if [ -z ${HOME:+_} ]
+if [ -z ${PWD:+PWD} ] || [ "$PWD" != "$(pwd)" ]
   then
-    echo "$HOME: home directory not found"
-    exit 1
+    export PWD="$(pwd)"
 fi
 
-. "${PWD:=$(pwd)}/bin/setup"
+. "$PWD/bin/setup"
 
-export BINARIES="$PWD/bin"
+source "$PWD/bin/build"
 
-source "$BINARIES/build"
+printf '
+Please enter a new version number: '
 
-printf 'Please enter a version number: '
-read VERSION
+read version </dev/tty
 
 for tag in $(git tag -l)
   do
-    if [ "$tag" = "$VERSION" ]
+    if [ "$tag" = "$version" ]
       then
-        echo "$VERSION: tag already exists"
+        echo; echo "Error: Version $version is already tagged." >&2
+
         exit 1
     fi
 done
 
+unset tag
+
 git add dist
-git commit -m "release(v$VERSION): distribute [ci skip]"
+
+git commit -m "release(v$version): distribute [ci skip]"
+
 git push origin master
 
-git tag -a "$VERSION" -m "v$VERSION"
+git tag -a "$version" -m "v$version"
+
 git push origin --tags

@@ -1,0 +1,3 @@
+install: bin/setup
+language: generic
+script: bin/install

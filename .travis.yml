@@ -2,6 +2,7 @@ before_script:
   - rm -rf "$HOME/.bash_profile"
   - rm -rf "$HOME/.bashrc"
   - rm -rf "$HOME/.profile"
+  - rm -rf "$HOME/.zshrc"
 install: bin/setup
 language: generic
 os: osx

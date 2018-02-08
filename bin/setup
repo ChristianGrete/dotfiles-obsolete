@@ -33,3 +33,5 @@ for ROUTINE in update dependencies
   do
     source "$ROUTINES/$ROUTINE.sh"
 done
+
+unset dotfiles_sources

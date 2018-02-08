@@ -1,3 +1,5 @@
+before_script: rm -rf "$HOME/.bash_profile"
 install: bin/setup
 language: generic
 os: osx
+script: bin/install

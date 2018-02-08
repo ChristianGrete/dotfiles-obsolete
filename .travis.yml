@@ -1,4 +1,3 @@
-install: sh bin/build
+install: bin/setup
 language: generic
 os: osx
-script: sh bin/install

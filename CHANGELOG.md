@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog][keep-a-changelog-url] and this project
 
 ## [Unreleased]
 
+### Unmerged
+
+- [develop]
+
 ## 0.0.1-gamma
 
 ### Summary
@@ -54,6 +58,7 @@ The format is based on [Keep a Changelog][keep-a-changelog-url] and this project
 [0.0.1-alpha.1]: https://github.com/ChristianGrete/dotfiles/compare/0.0.1-alpha...0.0.1-alpha.1
 [0.0.1-alpha]: https://github.com/ChristianGrete/dotfiles/compare/42e6a33da7a62c44a1448dbce60bc06b7af7ea38...0.0.1-alpha
 [42e6a33]: https://github.com/ChristianGrete/dotfiles/commit/42e6a33da7a62c44a1448dbce60bc06b7af7ea38
+[develop]: https://github.com/ChristianGrete/dotfiles/compare/master...develop
 
 Copyright © 2015–2018 ([MIT](LICENSE.md)) [Christian Grete](https://christiangrete.com)
 

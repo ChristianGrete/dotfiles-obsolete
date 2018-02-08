@@ -1,14 +1,14 @@
-# POSIX compliant function to test whether a program is available
+# POSIX compliant function to test whether a command is available
 available () {
-  if [ -z ${1:+program} ]
+  if [ -z ${1:+command} ]
     then
-      echo 'program: parameter not set or null' >&2
+      echo 'command: parameter not set or null' >&2
 
       return 1
   fi
 
   set -- $(
-    location="$(command -v $1 2>/dev/null)"
+    location="$(command -v -- $1 2>/dev/null)"
 
     printf "$location $?"
   ) $1
@@ -34,12 +34,12 @@ available () {
           [ $? -eq 0 ] && return
       fi
 
-      echo "$3: program not found" >&2
+      echo "$3: command not found" >&2
 
       return 127
   elif [ -d $1 ] || [ ! -x $1 ]
     then
-      echo "$3: file not executable" >&2
+      echo "$3: command not executable" >&2
 
       return 126
   fi

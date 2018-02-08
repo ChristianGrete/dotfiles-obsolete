@@ -1,4 +1,4 @@
-# Optimization of the PATH variable
+# Optimization of PATH variable
 ifs="$IFS" && IFS=':'
 
 for directory in $(printf "$PATH")
@@ -56,5 +56,5 @@ $field"
         fi
     done
 
-    IFS="$ifs" && unset field ifs
+    IFS="$ifs" && unset entry field ifs
 fi

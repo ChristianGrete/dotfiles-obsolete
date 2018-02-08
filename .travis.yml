@@ -1,3 +1,4 @@
 install: sh bin/build
 language: generic
+os: osx
 script: sh bin/install

@@ -56,5 +56,5 @@ $field"
         fi
     done
 
-    IFS="$ifs" && unset field ifs
+    IFS="$ifs" && unset entry field ifs
 fi

@@ -1,3 +1,5 @@
+. "$HOME/.profile"
+
 if [ -z ${DOTFILES_VERSION:+DOTFILES_VERSION} ]
   then
     echo 'Error: Undefined dotfiles version.'

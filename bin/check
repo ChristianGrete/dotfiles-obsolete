@@ -19,7 +19,8 @@ Options:
 Steps:
   before_cache
   before_script
-EOF)"
+EOF
+)"
 
 if [ $# -eq 0 ] || [ "$1" = '-?' ] || [ "$1" = '-h' ] || [ "$1" = '--help' ]
   then

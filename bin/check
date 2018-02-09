@@ -1,0 +1,46 @@
+#!/bin/sh
+
+cd "$(dirname "$0")/.."
+
+if [ -z ${PWD:+PWD} ] || [ "$PWD" != "$(pwd)" ]
+  then
+    export PWD="$(pwd)"
+fi
+
+usage="$(cat <<EOF
+Usage: check option | step
+
+Description:
+  A simple CLI to handle Travis CI steps.
+
+Options:
+  -?, -h, --help    Show usage (print this text)
+
+Steps:
+  before_cache
+  before_script
+EOF)"
+
+if [ $# -eq 0 ] || [ "$1" = '-?' ] || [ "$1" = '-h' ] || [ "$1" = '--help' ]
+  then
+    echo "$usage"
+
+    exit
+fi
+
+unset usage
+
+steps="$PWD/lib/check"
+
+if [ -r "$steps/$1.sh" ]
+  then
+    step="$1"
+
+    shift
+
+    . "$steps/$step.sh"
+else
+  echo "Error: Unknown step \`$1\`." >&2
+
+  exit 1
+fi

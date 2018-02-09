@@ -7,6 +7,9 @@ EOF)" >&2
     exit 1
 fi
 
+echo '... Pulling main branches:
+'
+
 for branch in develop master
   do
     command git pull origin "$branch"

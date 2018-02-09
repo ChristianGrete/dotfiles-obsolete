@@ -1,4 +1,5 @@
-echo 'Installing dependencies...'
+echo '... Installing/updating dependencies:
+'
 
 subroutines="$ROUTINES/$ROUTINE"
 

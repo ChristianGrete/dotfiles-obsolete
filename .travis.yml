@@ -10,7 +10,6 @@ before_install:
   - sh bin/setup
   - dash bin/check before_install
 before_script: dash bin/check before_script
-deploy: dash bin/check deploy
 install: dash bin/install
 language: generic
 os: osx

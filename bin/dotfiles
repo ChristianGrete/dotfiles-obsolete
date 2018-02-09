@@ -39,7 +39,8 @@ Commands:
   update              Update dotfiles and profiles
 
 Run \`dotfiles help <command>\` for more information on specific commands.
-EOF)"
+EOF
+)"
 
 if [ $# -eq 0 ] || [ "$1" = '-?' ] || [ "$1" = '-h' ] || [ "$1" = '--help' ]
   then

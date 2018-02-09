@@ -8,7 +8,8 @@ The format is based on [Keep a Changelog][keep-a-changelog-url] and this project
 
 ### Added
 
-- [#3](https://github.com/ChristianGrete/dotfiles/issues/3) – `feat(*)`: implement travis ci
+- `feat(*)`: implement travis ci [[#3]](https://github.com/ChristianGrete/dotfiles/issues/3)
+- `fix(*)`: use posix compliant syntax
 
 ### Unmerged
 

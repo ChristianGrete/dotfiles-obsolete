@@ -7,6 +7,9 @@ EOF)" >&2
     exit 1
 fi
 
-[ "$(branch)" != master ] && command git checkout -t -b master origin/master
+if [ "$(branch)" != master ]
+  then
+    command git fetch --all && command git checkout master
+fi
 
 command git pull origin master

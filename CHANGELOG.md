@@ -8,7 +8,7 @@ The format is based on [Keep a Changelog][keep-a-changelog-url] and this project
 
 ### Added
 
-- feat(*): implement travis ci #4
+- #3 – feat(*): implement travis ci
 
 ### Unmerged
 

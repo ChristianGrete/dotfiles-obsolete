@@ -6,7 +6,8 @@ if [ "$(basename "$0")" != sh ]
 Please avoid trying to directly invoke this binary as it is intended to be
 executed as a download task from a remote location. If you are trying to
 download dotfiles, try again using \`curl -fLSs https://git.io/viFK3 | sh\`.
-EOF)" >&2
+EOF
+)" >&2
 
     exit 1
 fi
@@ -31,7 +32,8 @@ if [ "$(uname)" = Darwin ]
         printf "$(cat <<EOF
 Downloading dotfiles requires the command line developer tools to be installed
 and the path of the active developer directory to be set.
-EOF)" >&2
+EOF
+)" >&2
 
         if command xcode-select --install >/dev/null 2>&1
           then
@@ -40,7 +42,8 @@ EOF)" >&2
 option in the dialog that should have opened to install the command line
 developer tools and come back here to continue when finished or try to download
 again later.
-EOF)" >&2
+EOF
+)" >&2
 
             printf '
 
@@ -58,7 +61,8 @@ Continue download? (y/n [n]) '
                 echo "$(cat <<EOF
 Unable to find an active developer directory. Maybe the command line developer
 tools installation has not yet finished or failed. Try again.
-EOF)" >&2
+EOF
+)" >&2
 
                 exit 1
             fi
@@ -67,7 +71,8 @@ EOF)" >&2
  Please use
 \`xcode-select -s <path>\` to set a path (or see \`man xcode-select\`) and then
 try to download again.
-EOF)" >&2
+EOF
+)" >&2
 
           exit 1
         fi
@@ -82,7 +87,8 @@ elif ! git --version >/dev/null 2>&1
 Downloading dotfiles requires Git to be installed. An automated installation at
 this point is planned for the future but has to be done manually for this time.
 Please see https://git-scm.com/download/linux and try downloading again later.
-EOF)" >&2
+EOF
+)" >&2
 
     exit 1
 fi
@@ -99,7 +105,8 @@ By default, dotfiles will be downloaded and placed as a subdirectory into the
 current working directory, which is in this case:
 
 ${directory:-/}
-EOF)"
+EOF
+)"
 
 printf '
 Choose another directory? (y/n [n]) '
@@ -111,7 +118,8 @@ if confirm
     echo; echo "$(cat <<EOF
 Choosing another directory is currently unavailable but planned for the future.
 Please change your working directory manually and then start downloading again.
-EOF)" >&2
+EOF
+)" >&2
 
     exit 1
 fi
@@ -124,7 +132,8 @@ The dotfiles subdirectory will be named "$subdirectory" by default, which will
 result in:
 
 $directory/$subdirectory
-EOF)"
+EOF
+)"
 
 printf '
 Rename subdirectory? (y/n [n]) '
@@ -137,7 +146,8 @@ if confirm
 Renaming the subdirectory is currently unavailable but planned for the future.
 Alternatively, you could clone the dotfiles repository manually into your
 desired directory and then execute \`bin/install\` in it.
-EOF)" >&2
+EOF
+)" >&2
 
     exit 1
 fi

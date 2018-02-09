@@ -9,6 +9,12 @@ fi
 
 if [ "$(branch)" != master ]
   then
+    git branch -l
+
+    echo '----'
+
+    git branch -r
+
     command git fetch --all && command git checkout master
 fi
 

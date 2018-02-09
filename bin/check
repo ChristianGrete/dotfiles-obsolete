@@ -42,7 +42,7 @@ if [ -r "$steps/$1.sh" ]
 
     . "$steps/$step.sh"
 else
-  echo "Error: Unknown step \`$1\`." >&2
+  echo "Error: Unknown option or step \`$1\`." >&2
 
   exit 1
 fi

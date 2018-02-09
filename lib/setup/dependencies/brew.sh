@@ -5,16 +5,31 @@ fi
 
 if ! available brew
   then
+    printf 'Installing Homebrew ... '
+
     ruby -e $(curl -fLSs https://raw.githubusercontent.com/Homebrew/install/master/install)
 
-    if [ $? -ne 0 ]
+    if [ $? -eq 0 ]
       then
-        echo "$(cat <<EOF
-Homebrew installation failed.
-EOF)" >&2
+        echo 'success.'
+    else
+      echo 'failed.'
 
-        exit 1
+      echo; echo 'Error: Unable to install Homebrew.' >&2
+
+      exit 1
     fi
 fi
 
+printf 'Updating Homebrew ... '
+
 brew update >/dev/null 2>&1
+
+if [ $? -eq 0 ]
+  then
+    echo 'success.'
+else
+  echo 'failed.'
+
+  echo; echo 'Warning: Unable to update Homebrew.' >&2
+fi

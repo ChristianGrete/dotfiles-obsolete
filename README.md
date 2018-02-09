@@ -1,5 +1,8 @@
 # [![dotfiles](https://cdn.rawgit.com/ChristianGrete/dotfiles/master/logo.svg "dotfiles")](https://github.com/ChristianGrete/dotfiles)
 
+`master`: [![Travis CI (master)][shield-travis-ci-master]][travis-ci-url]
+`develop`: [![Travis CI (develop)][shield-travis-ci-develop]][travis-ci-branches-url]
+
 > Christian Grete’s personal dotfiles
 
 These are my __dotfiles__ to personalize and setup my machine.
@@ -31,3 +34,8 @@ Copyright © 2015–2018 [Christian Grete](https://christiangrete.com)
 - [Twitter](https://twitter.com/ChristianGrete)
 - [LinkedIn](https://www.linkedin.com/in/ChristianGrete)
 - [XING](https://www.xing.com/profile/Christian_Grete2)
+
+[shield-travis-ci-develop]: https://img.shields.io/travis/ChristianGrete/dotfiles/develop.svg
+[shield-travis-ci-master]: https://img.shields.io/travis/ChristianGrete/dotfiles/master.svg
+[travis-ci-branches-url]: https://travis-ci.org/ChristianGrete/dotfiles/branches
+[travis-ci-url]: https://travis-ci.org/ChristianGrete/dotfiles

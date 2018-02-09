@@ -9,6 +9,8 @@ fi
 
 if [ "$(branch)" != master ]
   then
+    git remote update
+
     git branch -l
 
     echo '----'

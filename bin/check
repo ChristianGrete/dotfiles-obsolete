@@ -18,11 +18,7 @@ Options:
 
 Steps (ordered by lifecycle):
   before_install
-  install
-  before_script
   script
-  before_cache
-  after_success | after_failure
   after_script
 EOF
 )"

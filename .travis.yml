@@ -1,11 +1,7 @@
-after_failure: dash bin/check after_failure
 after_script: dash bin/check after_script
-after_success: dash bin/check after_success
-before_cache: dash bin/check before_cache
 before_install:
   - sh bin/setup
   - dash bin/check before_install
-before_script: dash bin/check before_script
 install: dash bin/install
 language: generic
 os: osx

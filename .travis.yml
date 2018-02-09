@@ -1,6 +1,6 @@
-before_cache: bin/check before_cache
-before_script: bin/check before_script
+before_cache: dash bin/check before_cache
+before_script: dash bin/check before_script
 install: bin/setup
 language: generic
 os: osx
-script: bin/install
+script: dash bin/install

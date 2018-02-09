@@ -7,17 +7,9 @@ EOF)" >&2
     exit 1
 fi
 
-if [ "$(branch)" != master ]
-  then
-    git remote update
+for branch in develop master
+  do
+    command git pull origin "$branch"
+done
 
-    git branch -l
-
-    echo '----'
-
-    git branch -r
-
-    command git fetch --all && command git checkout master
-fi
-
-command git pull origin master
+unset branch

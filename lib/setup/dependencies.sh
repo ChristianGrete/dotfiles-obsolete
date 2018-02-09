@@ -1,3 +1,5 @@
+echo 'Installing dependencies...'
+
 subroutines="$ROUTINES/$ROUTINE"
 
 for subroutine in brew dash

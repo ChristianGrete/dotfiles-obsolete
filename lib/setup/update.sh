@@ -10,6 +10,8 @@ fi
 for branch in develop master
   do
     command git pull origin "$branch"
+
+    echo
 done
 
 unset branch

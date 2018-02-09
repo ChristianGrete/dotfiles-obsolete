@@ -1,6 +1,6 @@
-echo "\$HOME: $HOME"
-echo "\$REAL_HOME: $REAL_HOME"
+for dotfile in bash_profile bashrc profile zshrc
+  do
+    rm -rf "$HOME/.$dotfile"
 
-export HOME="$REAL_HOME"
-
-unset REAL_HOME
+    mv "$HOME/.$dotfile.backup" "$HOME/.$dotfile"
+done

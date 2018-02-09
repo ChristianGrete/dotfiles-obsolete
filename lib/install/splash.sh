@@ -6,5 +6,6 @@ echo "$(cat <<EOF
 \_/|_/\__/ |_/|__/|_/|__/|__/ \/
               |\\
               |/        v$DOTFILES_VERSION
-EOF)
+EOF
+)
 "

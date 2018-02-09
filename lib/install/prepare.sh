@@ -3,7 +3,8 @@ if [ ! -d "$HOME" ] || [ ! -w "$HOME" ]
     echo "$(cat <<EOF
 Your home directory is either invalid or not writable. Please make sure that the
 \`\$HOME\` variable and the user permissions are properly set. Then try again.
-EOF)" >&2
+EOF
+)" >&2
 
     exit 1
 fi
@@ -17,7 +18,8 @@ echo "$(cat <<EOF
 export DOTFILES='$PWD'
 export DOTFILES_PACKAGES='$PWD/opt'
 export DOTFILES_VERSION='$version'
-EOF)" > "$DOTFILES_SOURCES/.profiles/dotfiles.sh"
+EOF
+)" > "$DOTFILES_SOURCES/.profiles/dotfiles.sh"
 
 unset commit version
 

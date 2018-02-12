@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog][keep-a-changelog-url] and this project
 
 - `feat(lib)`: provide `.profiles` and `.projects` paths
 - `fix(src)`: load dotfiles profile at very first
+- `fix(src)`: use `command` prefix when aliasing `clear`
 
 ### Unmerged
 

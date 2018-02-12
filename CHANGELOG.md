@@ -9,6 +9,10 @@ The format is based on [Keep a Changelog][keep-a-changelog-url] and this project
 ### Added
 
 - `feat(lib)`: provide `.profiles` and `.projects` paths
+- `feat(src)`: add default editors
+
+### Changed
+
 - `fix(src)`: load dotfiles profile at very first
 - `fix(src)`: use `command` prefix when aliasing `clear`
 - `fix(*)`: remove `source` alias and usages

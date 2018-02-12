@@ -37,6 +37,8 @@ fi
 # Import of machine specific settings
 if [ -d "$HOME/.profiles" ]
   then
+    [ -r "$HOME/.profiles/dotfiles.sh" ] && source "$HOME/.profiles/dotfiles.sh"
+
     ifs="$IFS" && IFS='
 '
 
@@ -50,10 +52,13 @@ if [ -d "$HOME/.profiles" ]
 $field"
         fi
 
-        if [ "$entry" != "$HOME/.profiles/README.md" ] && [ -r "$entry" ]
-          then
-            source "$entry"
-        fi
+        [ "$entry" = "$HOME/.profiles/dotfiles.sh" ] && continue
+
+        [ "$entry" = "$HOME/.profiles/README.md" ] && continue
+
+        [ ! -r "$entry" ] && continue
+
+        source "$entry"
     done
 
     IFS="$ifs" && unset entry field ifs

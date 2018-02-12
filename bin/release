@@ -9,7 +9,7 @@ fi
 
 . "$PWD/bin/setup"
 
-source "$PWD/bin/build"
+. "$PWD/bin/build"
 
 printf '
 Please enter a new version number: '

@@ -5,7 +5,7 @@ subroutines="$ROUTINES/$ROUTINE"
 
 for subroutine in brew dash
   do
-    source "$subroutines/$subroutine.sh"
+    . "$subroutines/$subroutine.sh"
 done
 
 unset subroutine subroutines

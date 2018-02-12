@@ -38,7 +38,7 @@ unset real_home
 
 for function in list symlink walk
   do
-    source "$DOTFILES_SOURCES/.lib/$function.sh"
+    . "$DOTFILES_SOURCES/.lib/$function.sh"
 done
 
 unset function

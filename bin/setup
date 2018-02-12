@@ -22,7 +22,7 @@ unset real_home
 
 for function in available branch
   do
-    source "$dotfiles_sources/.lib/$function.sh"
+    . "$dotfiles_sources/.lib/$function.sh"
 done
 
 unset function
@@ -31,7 +31,7 @@ ROUTINES="$PWD/lib/setup"
 
 for ROUTINE in update dependencies
   do
-    source "$ROUTINES/$ROUTINE.sh"
+    . "$ROUTINES/$ROUTINE.sh"
 done
 
 unset dotfiles_sources

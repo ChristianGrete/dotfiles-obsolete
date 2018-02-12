@@ -3,6 +3,3 @@ if available clear >/dev/null 2>&1
   then
     alias c='command clear'
 fi
-
-# Provision of `editor` command
-alias editor="command vi"

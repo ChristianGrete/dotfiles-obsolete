@@ -25,6 +25,9 @@ IFS="$ifs" && unset directories directory ifs
 # Path to my executables
 export PATH="$HOME/.bin:$PATH"
 
+# Import of environment variables
+[ -r "$HOME/.env" ] && . "$HOME/.env"
+
 # Import of base aliases
 [ -r "$HOME/.aliases" ] && . "$HOME/.aliases"
 

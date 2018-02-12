@@ -18,6 +18,8 @@ echo "$(cat <<EOF
 export DOTFILES='$PWD'
 export DOTFILES_PACKAGES='$PWD/opt'
 export DOTFILES_VERSION='$version'
+export PROFILES='$HOME/.profiles'
+export PROJECTS='$HOME/.projects'
 EOF
 )" > "$DOTFILES_SOURCES/.profiles/dotfiles.sh"
 

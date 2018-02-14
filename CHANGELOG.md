@@ -17,6 +17,7 @@ The format is based on [Keep a Changelog][keep-a-changelog-url] and this project
 - `fix(src)`: use `command` prefix when aliasing `clear`
 - `fix(*)`: remove `source` alias and usages
 - `refactor(src)`: use `.env` dotfile
+- `style(mate)`: update `.tm_properties` file
 
 ### Unmerged
 

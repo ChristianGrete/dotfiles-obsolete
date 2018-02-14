@@ -76,5 +76,5 @@ fileType = source.regexp.python
 showIndentGuides = false
 spellChecking = false
 
-[ "{.,}{bash*,bin/*,lib/*.sh,profile,script/*}" ]
+[ "{.,}{bash*,bin/*,env,lib/*.sh,profile,script/*}" ]
 fileType = source.shell

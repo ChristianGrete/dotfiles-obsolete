@@ -19,6 +19,7 @@ The format is based on [Keep a Changelog][keep-a-changelog-url] and this project
 - `fix(*)`: remove `source` alias and usages
 - `refactor(src)`: use `.env` dotfile
 - `style(mate)`: update `.tm_properties` file
+- `style(src)`: cluster/comment `.env` variables
 
 ### Unmerged
 

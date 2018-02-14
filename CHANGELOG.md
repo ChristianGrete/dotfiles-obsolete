@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog][keep-a-changelog-url] and this project
 
 - `feat(lib)`: provide `.profiles` and `.projects` paths
 - `feat(src)`: add default editors
+- `feat(src)`: support `.env` in mate props
 
 ### Changed
 

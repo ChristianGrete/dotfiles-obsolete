@@ -50,5 +50,8 @@ wrapColumn = "Use Window Frame"
 [ ".editorconfig*" ]
 fileType = source.tm-properties
 
+[ ".env*" ]
+fileType = source.shell
+
 [ ".gitignore*" ]
 fileType = source.git-config

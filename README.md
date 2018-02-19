@@ -1,7 +1,10 @@
-# [![dotfiles](https://cdn.rawgit.com/ChristianGrete/dotfiles/master/logo.svg "dotfiles")](https://github.com/ChristianGrete/dotfiles)
+# [![dotfiles](https://cdn.rawgit.com/ChristianGrete/dotfiles/master/logo.svg "dotfiles")][github-url]
 
-`master`: [![Travis CI (master)][shield-travis-ci-master]][travis-ci-url]
-`develop`: [![Travis CI (develop)][shield-travis-ci-develop]][travis-ci-branches-url]
+[![Latest GitHub Tag][shield-github-tag]][github-tags-url]
+[![Branch: master][shield-branch-master]][github-url]
+[![Travis CI (master)][shield-travis-master]][travis-url]
+[![Branch: develop][shield-branch-develop]][github-branch-develop-url]
+[![Travis CI (develop)][shield-travis-develop]][travis-branches-url]
 
 > Christian Grete’s personal dotfiles
 
@@ -35,7 +38,13 @@ Copyright © 2015–2018 [Christian Grete](https://christiangrete.com)
 - [LinkedIn](https://www.linkedin.com/in/ChristianGrete)
 - [XING](https://www.xing.com/profile/Christian_Grete2)
 
-[shield-travis-ci-develop]: https://img.shields.io/travis/ChristianGrete/dotfiles/develop.svg
-[shield-travis-ci-master]: https://img.shields.io/travis/ChristianGrete/dotfiles/master.svg
-[travis-ci-branches-url]: https://travis-ci.org/ChristianGrete/dotfiles/branches
-[travis-ci-url]: https://travis-ci.org/ChristianGrete/dotfiles
+[github-branch-develop-url]: https://github.com/ChristianGrete/dotfiles/tree/develop
+[github-tags-url]: https://github.com/ChristianGrete/dotfiles/tags
+[github-url]: https://github.com/ChristianGrete/dotfiles
+[shield-branch-develop]: https://img.shields.io/badge/branch-develop-333333.svg
+[shield-branch-master]: https://img.shields.io/badge/branch-master-333333.svg
+[shield-github-tag]: https://img.shields.io/github/tag/ChristianGrete/dotfiles.svg
+[shield-travis-develop]: https://img.shields.io/travis/ChristianGrete/dotfiles/develop.svg
+[shield-travis-master]: https://img.shields.io/travis/ChristianGrete/dotfiles/master.svg
+[travis-branches-url]: https://travis-ci.org/ChristianGrete/dotfiles/branches
+[travis-url]: https://travis-ci.org/ChristianGrete/dotfiles

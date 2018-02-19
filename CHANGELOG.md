@@ -10,6 +10,10 @@ The format is based on [Keep a Changelog][keep-a-changelog-url] and this project
 
 - `feat(src)`: support directories in `symlink`
 
+### Changed
+
+- `docs(readme)`: update badges and links
+
 ### Unmerged
 
 - [develop]

@@ -1,4 +1,4 @@
-source "$HOME/.profile"
+. "$HOME/.profile"
 
 # Path to Oh-My-Zsh's repository
 export ZSH="$HOME/.oh-my-zsh"
@@ -9,4 +9,4 @@ ZSH_THEME=christiangrete
 
 plugins=(git)
 
-source "$ZSH/oh-my-zsh.sh"
+. "$ZSH/oh-my-zsh.sh"

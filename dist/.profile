@@ -25,18 +25,17 @@ IFS="$ifs" && unset directories directory ifs
 # Path to my executables
 export PATH="$HOME/.bin:$PATH"
 
-# Support for source command
-if ! available source >/dev/null 2>&1
-  then
-    alias source='.'
-fi
+# Import of environment variables
+[ -r "$HOME/.env" ] && . "$HOME/.env"
 
 # Import of base aliases
-[ -r "$HOME/.aliases" ] && source "$HOME/.aliases"
+[ -r "$HOME/.aliases" ] && . "$HOME/.aliases"
 
 # Import of machine specific settings
 if [ -d "$HOME/.profiles" ]
   then
+    [ -r "$HOME/.profiles/dotfiles.sh" ] && . "$HOME/.profiles/dotfiles.sh"
+
     ifs="$IFS" && IFS='
 '
 
@@ -50,10 +49,13 @@ if [ -d "$HOME/.profiles" ]
 $field"
         fi
 
-        if [ "$entry" != "$HOME/.profiles/README.md" ] && [ -r "$entry" ]
-          then
-            source "$entry"
-        fi
+        [ "$entry" = "$HOME/.profiles/dotfiles.sh" ] && continue
+
+        [ "$entry" = "$HOME/.profiles/README.md" ] && continue
+
+        [ ! -r "$entry" ] && continue
+
+        . "$entry"
     done
 
     IFS="$ifs" && unset entry field ifs

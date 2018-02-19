@@ -14,16 +14,16 @@ symlink () {
       return 1
   fi
 
-  if [ ! -f "$1" ]
+  if [ ! -d "$1" ] && [ ! -f "$1" ]
     then
-      echo "$1: file not found or invalid" >&2
+      echo "$1: source not found or invalid" >&2
 
       return 1
   fi
 
   if [ -e "$2" ]
     then
-      printf "$2: file already exists" >&2
+      printf "$2: target already exists" >&2
       printf ', replace? (y/n [n]) '
 
       set -- "$1" "$2" "$(

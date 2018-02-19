@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog][keep-a-changelog-url] and this project
 
 ## [Unreleased]
 
+### Unmerged
+
+- [develop]
+
+## [0.0.1-delta.2] – 2018-02-19
+
 ### Added
 
 - `feat(src)`: support directories in `symlink`
@@ -13,10 +19,6 @@ The format is based on [Keep a Changelog][keep-a-changelog-url] and this project
 ### Changed
 
 - `docs(readme)`: update badges and links
-
-### Unmerged
-
-- [develop]
 
 ## [0.0.1-delta.1] – 2018-02-19
 
@@ -76,7 +78,8 @@ The format is based on [Keep a Changelog][keep-a-changelog-url] and this project
 - [0.0.1-alpha] – 2016-06-24
 - [42e6a33] – 2016-06-10
 
-[Unreleased]: https://github.com/ChristianGrete/dotfiles/compare/0.0.1-delta.1...master
+[Unreleased]: https://github.com/ChristianGrete/dotfiles/compare/0.0.1-delta.2...master
+[0.0.1-delta.2]: https://github.com/ChristianGrete/dotfiles/compare/0.0.1-delta.1...0.0.1-delta.2
 [0.0.1-delta.1]: https://github.com/ChristianGrete/dotfiles/compare/0.0.1-delta...0.0.1-delta.1
 [0.0.1-delta]: https://github.com/ChristianGrete/dotfiles/compare/0.0.1-gamma.1...0.0.1-delta
 [0.0.1-gamma.1]: https://github.com/ChristianGrete/dotfiles/compare/0.0.1-gamma...0.0.1-gamma.1

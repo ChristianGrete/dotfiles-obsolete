@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog][keep-a-changelog-url] and this project
 
 ## [Unreleased]
 
+### Unmerged
+
+- [develop]
+
+## [0.0.1-delta.1] – 2018-02-19
+
 ### Added
 
 - `feat(lib)`: provide `.profiles` and `.projects` paths
@@ -20,10 +26,6 @@ The format is based on [Keep a Changelog][keep-a-changelog-url] and this project
 - `refactor(src)`: use `.env` dotfile
 - `style(mate)`: update `.tm_properties` file
 - `style(src)`: cluster/comment `.env` variables
-
-### Unmerged
-
-- [develop]
 
 ## [0.0.1-delta] – 2018-02-09
 
@@ -66,7 +68,8 @@ The format is based on [Keep a Changelog][keep-a-changelog-url] and this project
 - [0.0.1-alpha] – 2016-06-24
 - [42e6a33] – 2016-06-10
 
-[Unreleased]: https://github.com/ChristianGrete/dotfiles/compare/0.0.1-delta...master
+[Unreleased]: https://github.com/ChristianGrete/dotfiles/compare/0.0.1-delta.1...master
+[0.0.1-delta.1]: https://github.com/ChristianGrete/dotfiles/compare/0.0.1-delta...0.0.1-delta.1
 [0.0.1-delta]: https://github.com/ChristianGrete/dotfiles/compare/0.0.1-gamma.1...0.0.1-delta
 [0.0.1-gamma.1]: https://github.com/ChristianGrete/dotfiles/compare/0.0.1-gamma...0.0.1-gamma.1
 [0.0.1-gamma]: https://github.com/ChristianGrete/dotfiles/compare/0.0.1-beta.7...0.0.1-gamma

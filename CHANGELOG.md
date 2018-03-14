@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog][keep-a-changelog-url] and this project
 
 ## [Unreleased]
 
+- refactor(profiles): check for readability
+
 ### Unmerged
 
 - [develop]
@@ -13,51 +15,43 @@ The format is based on [Keep a Changelog][keep-a-changelog-url] and this project
 ## [0.0.1-delta.2] – 2018-02-19
 
 ### Added
-
-- `feat(src)`: support directories in `symlink`
+- feat(src): support directories in `symlink`
 
 ### Changed
-
-- `docs(readme)`: update badges and links
+- docs(readme): update badges and links
 
 ## [0.0.1-delta.1] – 2018-02-19
 
 ### Added
-
-- `feat(lib)`: provide `.profiles` and `.projects` paths
-- `feat(src)`: add default editors
-- `feat(src)`: support `.env` in mate props
+- feat(lib): provide `.profiles` and `.projects` paths
+- feat(src): add default editors
+- feat(src): support `.env` in mate props
 
 ### Changed
-
-- `fix(src)`: load dotfiles profile at very first
-- `fix(src)`: use `command` prefix when aliasing `clear`
-- `fix(*)`: remove `source` alias and usages
-- `refactor(src)`: use `.env` dotfile
-- `style(mate)`: update `.tm_properties` file
-- `style(src)`: cluster/comment `.env` variables
+- fix(src): load dotfiles profile at very first
+- fix(src): use `command` prefix when aliasing `clear`
+- fix(*): remove `source` alias and usages
+- refactor(src): use `.env` dotfile
+- style(mate): update `.tm_properties` file
+- style(src): cluster/comment `.env` variables
 
 ## [0.0.1-delta] – 2018-02-09
 
 ### Added
-
-- `feat(*)`: implement travis ci [[#3](https://github.com/ChristianGrete/dotfiles/issues/3)]
+- feat(*): implement travis ci [[#3](https://github.com/ChristianGrete/dotfiles/issues/3)]
 
 ### Changed
-
-- `fix(*)`: use posix compliant syntax
+- fix(*): use posix compliant syntax
 
 ## 0.0.1-gamma
 
 ### Summary
-
 - [0.0.1-gamma.1] – 2018-02-08
 - [0.0.1-gamma] – 2018-02-08
 
 ## 0.0.1-beta
 
 ### Summary
-
 - [0.0.1-beta.7] – 2016-09-23
 - [0.0.1-beta.6] – 2016-06-30
 - [0.0.1-beta.5] – 2016-06-30
@@ -70,7 +64,6 @@ The format is based on [Keep a Changelog][keep-a-changelog-url] and this project
 ## 0.0.1-alpha
 
 ### Summary
-
 - [0.0.1-alpha.4] – 2016-06-25
 - [0.0.1-alpha.3] – 2016-06-24
 - [0.0.1-alpha.2] – 2016-06-24

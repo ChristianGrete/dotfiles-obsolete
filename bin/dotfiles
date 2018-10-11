@@ -1,0 +1,66 @@
+#!/bin/sh
+
+unset DOTFILES # FIXME
+
+if [ -z ${DOTFILES:+DOTFILES} ]
+  then
+    if [ ! -d "${DOTFILES:=$(dirname "$0")/..}" ] || [ ! -r "$DOTFILES" ]
+      then
+        echo 'Invalid directory'
+
+        exit 1
+    fi
+
+    DOTFILES="$(dirname "$DOTFILES")"
+fi
+
+usage="$(cat <<EOF
+Usage: dotfiles option | command [arguments...]
+
+Description:
+  A dotfiles CLI for common tasks.
+
+Version:
+  ${DOTFILES_VERSION:=$(cd "$DOTFILES" && git describe --tags $(
+    git rev-list --max-count=1 --tags
+  ))}
+
+Location:
+  $DOTFILES
+
+Options:
+  -?, -h, --help      Show usage (print this text)
+  -v, --version       Print dotfiles version
+
+Commands:
+  add <profile>       Install a dotfiles profile
+  help <command>      Show more information on a command
+  remove <profile>    Uninstall a dotfiles profile
+  update              Update dotfiles and profiles
+
+Run \`dotfiles help <command>\` for more information on specific commands.
+EOF
+)"
+
+if [ $# -eq 0 ] || [ "$1" = '-?' ] || [ "$1" = '-h' ] || [ "$1" = '--help' ]
+  then
+    echo "$usage"
+
+    exit
+fi
+
+if [ "$1" = '-v' ] || [ "$1" = '--version' ]
+  then
+    echo "$DOTFILES_VERSION"
+
+    exit
+fi
+
+if [ -r "$DOTFILES/lib/dotfiles/$1.sh" ]
+  then
+    command="$1"
+
+    shift
+
+    source "$DOTFILES/lib/dotfiles/$command.sh"
+fi
